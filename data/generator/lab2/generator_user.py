@@ -444,27 +444,79 @@ def generate_game_demand_list(user_id, service_info):
 
 
 def generate_demandchain_list(user_id, sercie_info):
-    chain_list = []
+    chain_list_prev = []
+    chain_list_curr = []
     r = generator_random.random()
+    d_prev = None
     if r < 0.8:
-        chain_list.append(generate_market_demand_list(user_id, sercie_info))
+        d_prev = generate_market_demand_list(user_id, sercie_info)
+        chain_list_prev.append(d_prev)
+    r = generator_random.random()
+    if r < 0.4:  # 40% chance not change
+        if d_prev is not None:
+            chain_list_curr.append(d_prev)
+    elif r < 0.8:  # 40% chance change demands
+        chain_list_curr.append(generate_market_demand_list(user_id, sercie_info))
+    else:  # 20% chance abandon this demand
+        pass
 
+    d_prev = None
     r = generator_random.random()
     if r < 0.6:
-        chain_list.append(generate_game_demand_list(user_id, sercie_info))
+        d_prev = generate_game_demand_list(user_id, sercie_info)
+        chain_list_prev.append(d_prev)
+    r = generator_random.random()
+    if r < 0.4:  # 40% chance not change
+        if d_prev is not None:
+            chain_list_curr.append(d_prev)
+    elif r < 0.8:  # 40% chance change demands
+        chain_list_curr.append(generate_game_demand_list(user_id, sercie_info))
+    else:  # 20% chance abandon this demand
+        pass
 
+    d_prev = None
     r = generator_random.random()
     if r < 0.6:
-        chain_list.append(generate_bike_demand_list(user_id, sercie_info))
+        d_prev = generate_bike_demand_list(user_id, sercie_info)
+        chain_list_prev.append(d_prev)
+    r = generator_random.random()
+    if r < 0.4:  # 40% chance not change
+        if d_prev is not None:
+            chain_list_curr.append(d_prev)
+    elif r < 0.8:  # 40% chance change demands
+        chain_list_curr.append(generate_bike_demand_list(user_id, sercie_info))
+    else:  # 20% chance abandon this demand
+        pass
 
+    d_prev = None
     r = generator_random.random()
     if r < 0.3:
-        chain_list.append(generate_hotel_demand_list(user_id, sercie_info))
+        d_prev = generate_hotel_demand_list(user_id, sercie_info)
+        chain_list_prev.append(d_prev)
+    r = generator_random.random()
+    if r < 0.4:  # 40% chance not change
+        if d_prev is not None:
+            chain_list_curr.append(d_prev)
+    elif r < 0.8:  # 40% chance change demands
+        chain_list_curr.append(generate_hotel_demand_list(user_id, sercie_info))
+    else:  # 20% chance abandon this demand
+        pass
 
+    d_prev = None
     r = generator_random.random()
     if r < 0.5:
-        chain_list.append(generate_canteen_demand_list(user_id, sercie_info))
-    return chain_list
+        d_prev = generate_canteen_demand_list(user_id, sercie_info)
+        chain_list_prev.append(d_prev)
+    r = generator_random.random()
+    if r < 0.4:  # 40% chance not change
+        if d_prev is not None:
+            chain_list_curr.append(d_prev)
+    elif r < 0.8:  # 40% chance change demands
+        chain_list_curr.append(generate_canteen_demand_list(user_id, sercie_info))
+    else:  # 20% chance abandon this demand
+        pass
+
+    return chain_list_prev, chain_list_curr
 
 
 def generate_user(n, x_max, y_max, service_info):
@@ -473,18 +525,27 @@ def generate_user(n, x_max, y_max, service_info):
         generator_random.random() * x_max,
         generator_random.random() * y_max
     )
-    user = MUser(user_id, position)
-    chain_list = generate_demandchain_list(user_id, service_info)
-    while len(chain_list) == 0:
-        chain_list = generate_demandchain_list(user_id, service_info)
-    for chain in chain_list:
-        user.add_demand_chain(chain)
-    return user
+    user_prev = MUser(user_id, position)
+    user_curr = MUser(user_id, position)
+    chain_list_prev, chain_list_curr = generate_demandchain_list(user_id, service_info)
+    while len(chain_list_prev) == 0 or len(chain_list_curr) == 0:
+        chain_list, chain_list_curr = generate_demandchain_list(user_id, service_info)
+    for chain in chain_list_prev:
+        user_prev.add_demand_chain(chain)
+    for chain in chain_list_curr:
+        user_curr.add_demand_chain(chain)
+    return user_prev, user_curr
 
 
 if __name__ == '__main__':
     info_dict = read_services_info('/Workspace/gitlab/mdata/Lab2/ExperimentData/service.json')
-
-    for i in range(0, 10000):
-        user01 = generate_user(i, 10, 10, info_dict)
-        print(json.dumps(user01.to_json(), indent=4))
+    info_prev_list = []
+    info_curr_list = []
+    for i in range(0, 2):
+        user01_prev, user01_curr = generate_user(i, 10, 10, info_dict)
+        info_prev_list.append(user01_prev.to_json())
+        info_curr_list.append(user01_curr.to_json())
+    with open('/Workspace/gitlab/mdata/Lab2/ExperimentData/demand_prev.json', 'w') as f:
+        json.dump(info_prev_list, f, indent=4)
+    with open('/Workspace/gitlab/mdata/Lab2/ExperimentData/demand_curr.json', 'w') as f:
+        json.dump(info_curr_list, f, indent=4)
