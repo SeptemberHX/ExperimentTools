@@ -87,7 +87,9 @@ def read_services_info(file_path):
 def random_select_sla_level(service_info, service_name, function_id, r : random.Random):
     if service_name is not None:
         i = service_info[service_name][r.randint(0, len(service_info[service_name]) - 1)]
-        return i['interfaceMap']['{0}__{1}'.format(service_name, function_id)]['slaLevel']
+        for interface in i['interfaceMap'].values():
+            if interface['functionId'] == function_id:
+                return interface['slaLevel']
     else:
         sla_level_set = set()
         for service_name in service_info:
@@ -99,8 +101,8 @@ def random_select_sla_level(service_info, service_name, function_id, r : random.
         return sla_level_list[r.randint(0, len(sla_level_list) - 1)]
 
 
-generator_random = random.Random(1000000)
-
+generator_random = random.Random(3000000)
+# generator_random = random.Random(2000000)
 
 def generate_canteen_demand_list(user_id, service_info):
     demand_chain = MDemandChain()
@@ -233,7 +235,7 @@ def generate_market_demand_list(user_id, service_info):
         else:
             service2 = None
         d2 = MDemand(
-            id='{0}_{1}_market'.format(user_id, f2),
+            id='{0}_{1}_resell_market'.format(user_id, f2),
             userId=user_id,
             functionId=f2,
             slaLevel=random_select_sla_level(service_info, service2, f2, generator_random),
@@ -529,7 +531,8 @@ def generate_user(n, x_max, y_max, service_info):
     user_curr = MUser(user_id, position)
     chain_list_prev, chain_list_curr = generate_demandchain_list(user_id, service_info)
     while len(chain_list_prev) == 0 or len(chain_list_curr) == 0:
-        chain_list, chain_list_curr = generate_demandchain_list(user_id, service_info)
+        print('Failed to create user, retry...')
+        chain_list_prev, chain_list_curr = generate_demandchain_list(user_id, service_info)
     for chain in chain_list_prev:
         user_prev.add_demand_chain(chain)
     for chain in chain_list_curr:
@@ -537,15 +540,130 @@ def generate_user(n, x_max, y_max, service_info):
     return user_prev, user_curr
 
 
+def generate_specific_user(n, x_max, y_max, service_info, common_percent):
+    user_id = 'user_{0}'.format(n)
+    position = MPosition(
+        generator_random.random() * x_max,
+        generator_random.random() * y_max
+    )
+    user_prev = MUser(user_id, position)
+    user_curr = MUser(user_id, position)
+    prev_chain = create_random_user_demand(user_id, service_info)
+    if generator_random.random() < common_percent:
+        next_chain = create_specific_user_demand(user_id)
+    else:
+        next_chain = create_random_user_demand(user_id, service_info)
+    user_prev.add_demand_chain(prev_chain)
+    user_curr.add_demand_chain(next_chain)
+    return user_prev, user_curr
+
+
+def create_simple_user():
+    version = 'v1'
+    for user_size in [1000]:
+        print('User size: ', user_size)
+        info_dict = read_services_info('/Workspace/gitlab/mdata/Lab2/TestData/{0}/{1}/service.json'.format(version, user_size))
+        info_prev_list = []
+        info_curr_list = []
+        for i in range(0, user_size):
+            print('Generate user {0}'.format(i))
+            user01_prev, user01_curr = generate_user(i, 10, 10, info_dict)
+            info_prev_list.append(user01_prev.to_json())
+            info_curr_list.append(user01_curr.to_json())
+        with open('/Workspace/gitlab/mdata/Lab2/TestData/{0}/{1}/demand_prev.json'.format(version, user_size), 'w') as f:
+            json.dump(info_prev_list, f, indent=4)
+        with open('/Workspace/gitlab/mdata/Lab2/TestData/{0}/{1}/demand_curr.json'.format(version, user_size), 'w') as f:
+            json.dump(info_curr_list, f, indent=4)
+
+
+def create_specific_user():
+    version = 'common'
+    user_size = 5000
+    for common_percent in [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5]:
+        print('percent: {0}'.format(common_percent))
+        info_dict = read_services_info('/Workspace/gitlab/mdata/Lab2/ExperimentData/{0}/{1}/service.json'.format(version, common_percent))
+        info_prev_list = []
+        info_curr_list = []
+        for i in range(0, user_size):
+            user_prev, user_curr = generate_specific_user(i, 10, 10, info_dict, common_percent)
+            info_prev_list.append(user_prev.to_json())
+            info_curr_list.append(user_curr.to_json())
+        with open('/Workspace/gitlab/mdata/Lab2/ExperimentData/{0}/{1}/demand_prev.json'.format(version, common_percent), 'w') as f:
+            json.dump(info_prev_list, f, indent=4)
+        with open('/Workspace/gitlab/mdata/Lab2/ExperimentData/{0}/{1}/demand_curr.json'.format(version, common_percent), 'w') as f:
+            json.dump(info_curr_list, f, indent=4)
+
+
+def create_specific_user_demand(user_id):
+    demand_chain = MDemandChain()
+    # select game_service
+    f1 = 'game_function'
+    service1 = 'tencent_service'
+    d1 = MDemand(
+        id='{0}_{1}_game'.format(user_id, f1),
+        userId=user_id,
+        functionId=f1,
+        slaLevel=2,
+        serviceName=service1
+    )
+    demand_chain.add_demand(d1)
+
+    f2 = 'chat_function'
+    service2 = 'yy_service'
+    d2 = MDemand(
+        id='{0}_{1}_game'.format(user_id, f2),
+        userId=user_id,
+        functionId=f2,
+        slaLevel=1,
+        serviceName=service2
+    )
+    demand_chain.add_demand(d2)
+
+    f2 = 'stream_function'
+    service2 = 'bilibili_service'
+    d2 = MDemand(
+        id='{0}_{1}_test'.format(user_id, f2),
+        userId=user_id,
+        functionId=f2,
+        slaLevel=2,
+        serviceName=service2
+    )
+    demand_chain.add_demand(d2)
+    return demand_chain
+
+
+def create_random_user_demand(user_id, result_info):
+    demand_chain = MDemandChain()
+    for i in range(0, 3):
+        flag = True
+        while flag:
+            service_names = list(result_info.keys())
+            service_name = service_names[generator_random.randint(0, len(service_names) - 1)]
+            service_list_of_same_name = result_info[service_name]
+            service = service_list_of_same_name[generator_random.randint(0, len(service_list_of_same_name) - 1)]
+            interfaces = list(service['interfaceMap'].keys())
+            interface = service['interfaceMap'][interfaces[generator_random.randint(0, len(interfaces) - 1)]]
+            d = MDemand(
+                id='{0}_{1}_{2}_test'.format(user_id, interface['functionId'], service_name),
+                userId=user_id,
+                functionId=interface['functionId'],
+                slaLevel=interface['slaLevel'],
+                serviceName=service_name
+            )
+            exists = False
+            for j in range(0, i):
+                if demand_chain.demand_list[j].serviceName == d.serviceName and demand_chain.demand_list[j].functionId == d.functionId:
+                    exists = True
+                    break
+            if not exists:
+                flag = False
+        demand_chain.add_demand(d)
+    return demand_chain
+
+
 if __name__ == '__main__':
-    info_dict = read_services_info('/Workspace/gitlab/mdata/Lab2/ExperimentData/service.json')
-    info_prev_list = []
-    info_curr_list = []
-    for i in range(0, 2):
-        user01_prev, user01_curr = generate_user(i, 10, 10, info_dict)
-        info_prev_list.append(user01_prev.to_json())
-        info_curr_list.append(user01_curr.to_json())
-    with open('/Workspace/gitlab/mdata/Lab2/ExperimentData/demand_prev.json', 'w') as f:
-        json.dump(info_prev_list, f, indent=4)
-    with open('/Workspace/gitlab/mdata/Lab2/ExperimentData/demand_curr.json', 'w') as f:
-        json.dump(info_curr_list, f, indent=4)
+    # info_dict = read_services_info(
+    #     '/Workspace/gitlab/mdata/Lab2/ExperimentData/{0}/{1}/service.json'.format('v1', 1000))
+    # print(create_random_user_demand('user_0', info_dict).to_json())
+    # print(create_specific_user_demand('user_1').to_json())
+    create_specific_user()
