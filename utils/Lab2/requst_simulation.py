@@ -11,7 +11,6 @@ import json
 import time
 import random
 from utils.common.logger import get_logger
-import threading
 
 
 service_info = {}
@@ -119,54 +118,3 @@ def simulation_single_user(register_url, gateway_url, user_info_map: dict):
         if i + 1 < len(time_list) and curr_timestamp - start_timestamp > time_list[i + 1]:
             i += 1
             register_user(register_url, user_info_map[time_list[i]])
-
-
-if __name__ == '__main__':
-    # user_demand = {
-    #     "id": "user_1_market_function"
-    # }
-    # do_request('http://144.34.200.189:30080/request', 200, user_demand)
-    user_demand = {
-        "id": "user_1_market_function",
-        "serviceId": "tencent-service",
-        "functionId": "game_function"
-    }
-    user_demand_2 = {
-        "id": "user_1_pay_function",
-        "serviceId": "bilibili-service",
-        "functionId": "stream_function"
-    }
-    demand_chain = {
-        "demandIdList": [
-            user_demand['id'],
-            user_demand_2['id']
-        ],
-        "demandMap": {
-            user_demand['id']: user_demand,
-            user_demand_2['id']: user_demand_2
-        }
-    }
-    user_info = {
-        "demandChainList": [demand_chain],
-        "position": {
-            "x": 1,
-            "y": 1
-        },
-        "id": 'user_1'
-    }
-    user_info_map = {
-        0: user_info
-    }
-    load_service_info('./service.json')
-    # print(get_response_and_indata_size_with_service_and_function('netease-service', 'game_function'))
-    # do_request_chain('http://144.34.200.189:30080/request', [user_demand])
-    # simulation_single_user(
-    #     register_url='http://144.34.200.189:30080/register',
-    #     gateway_url='http://144.34.200.189:30080/request',
-    #     user_info_map=user_info_map
-    # )
-    threading.Thread(target=simulation_single_user, kwargs={
-        'register_url': 'http://144.34.200.189:30080/register',
-        'gateway_url': 'http://144.34.200.189:30080/request',
-        'user_info_map': user_info_map
-    }).start()

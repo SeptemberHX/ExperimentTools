@@ -1,0 +1,29 @@
+[
+  {
+    "demandChainList": [
+      {
+        "demandIdList": [
+          "user_1_market_function",
+          "user_1_pay_function"
+        ],
+        "demandMap": {
+          "user_1_market_function": {
+            "id": "user_1_market_function",
+            "serviceId": "tencent-service",
+            "functionId": "game_function"
+          },
+          "user_1_pay_function": {
+            "id": "user_1_pay_function",
+            "serviceId": "bilibili-service",
+            "functionId": "stream_function"
+          }
+        }
+      }
+    ],
+    "position": {
+      "x": 1,
+      "y": 1
+    },
+    "id": "user_1"
+  }
+]
