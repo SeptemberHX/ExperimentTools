@@ -36,7 +36,7 @@ def fetch_target_user_list(user_info, start_index, end_index):
                 break
             if user_id not in result_info:
                 result_info[user_id] = {}
-            result_info[user_id][time_gap] = user
+            result_info[user_id][int(time_gap)] = user
     return result_info
 
 
@@ -48,7 +48,7 @@ def load_data():
     gateway_ip_port = data_json['gateway']
     user_info = load_user_info_from_dict('./lab_data')
     target_user_info = fetch_target_user_list(user_info, data_json['start'], data_json['end'])
-    return None
+    return ''
 
 
 @app.route('/start', methods=['GET'])
@@ -61,7 +61,7 @@ def start_simulation():
             'gateway_url': 'http://{0}/request'.format(gateway_ip_port),
             'user_info_map': target_user_info[user_id]
         }).start()
-    return None
+    return ''
 
 
 if __name__ == '__main__':
