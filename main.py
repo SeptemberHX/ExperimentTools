@@ -48,6 +48,7 @@ def load_data():
     gateway_ip_port = data_json['gateway']
     user_info = load_user_info_from_dict('./lab_data')
     target_user_info = fetch_target_user_list(user_info, data_json['start'], data_json['end'])
+    return None
 
 
 @app.route('/start', methods=['GET'])
@@ -60,6 +61,7 @@ def start_simulation():
             'gateway_url': 'http://{0}/request'.format(gateway_ip_port),
             'user_info_map': target_user_info[user_id]
         }).start()
+    return None
 
 
 if __name__ == '__main__':
