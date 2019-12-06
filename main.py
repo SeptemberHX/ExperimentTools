@@ -20,7 +20,7 @@ gateway_ip_port = None
 def load_user_info_from_dict(dict_path):
     user_info = {}
     for time_gap in os.listdir(dict_path):
-        with open(os.path.join(dict_path, 'demands.json')) as f:
+        with open(os.path.join(dict_path, time_gap, 'demands.json')) as f:
             demand_json = json.load(f)
             user_info[time_gap] = demand_json
     return user_info
@@ -40,7 +40,7 @@ def fetch_target_user_list(user_info, start_index, end_index):
     return result_info
 
 
-@app.route('/start', methods=['POST'])
+@app.route('/load', methods=['POST'])
 def load_data():
     global target_user_info
     global gateway_ip_port
