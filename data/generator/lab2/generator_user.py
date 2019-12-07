@@ -2,7 +2,51 @@
 
 from typing import List
 import json
-import random
+import random, os
+
+
+user_position_map = {
+    0.1: {
+        'x': 5,
+        'y': 1
+    },
+    0.2: {
+        'x': 2,
+        'y': 1
+    },
+    0.3: {
+        'x': 8,
+        'y': 1
+    },
+    0.4: {
+        'x': 3.5,
+        'y': 3.6
+    },
+    0.5: {
+        'x': 6.5,
+        'y': 3.6
+    },
+    0.6: {
+        'x': 2,
+        'y': 6.2
+    },
+    0.7: {
+        'x': 5,
+        'y': 6.2
+    },
+    0.8: {
+        'x': 8,
+        'y': 6.2
+    },
+    0.9: {
+        'x': 3.5,
+        'y': 8.8
+    },
+    1.0: {
+        'x': 6.5,
+        'y': 8.8
+    }
+}
 
 
 class MPosition:
@@ -110,9 +154,9 @@ def generate_canteen_demand_list(user_id, service_info):
     f1 = 'canteen_function'
     r1 = generator_random.random()
     if r1 < 0.4:
-        service1 = 'ali_service'
+        service1 = 'ali-service'
     elif r1 < 0.8:
-        service1 = 'meituan_service'
+        service1 = 'meituan-service'
     else:
         service1 = None
     d1 = MDemand(
@@ -127,9 +171,9 @@ def generate_canteen_demand_list(user_id, service_info):
     f1 = 'car_function'
     r1 = generator_random.random()
     if r1 < 0.4:
-        service1 = 'didi_service'
+        service1 = 'didi-service'
     elif r1 < 0.8:
-        service1 = 'taxi_service'
+        service1 = 'taxi-service'
     else:
         service1 = None
     d1 = MDemand(
@@ -144,11 +188,11 @@ def generate_canteen_demand_list(user_id, service_info):
     f2 = 'pay_function'
     r2 = generator_random.random()
     if r2 < 0.3:
-        service2 = 'ali_service'
+        service2 = 'ali-service'
     elif r2 < 0.5:
-        service2 = 'wechat_service'
+        service2 = 'wechat-service'
     elif r2 < 0.6:
-        service2 = 'paypal_service'
+        service2 = 'paypal-service'
     else:
         service2 = None
     d2 = MDemand(
@@ -168,11 +212,11 @@ def generate_market_demand_list(user_id, service_info):
     f1 = 'market_function'
     r1 = generator_random.random()
     if r1 < 0.4:
-        service1 = 'jindong_service'
+        service1 = 'jindong-service'
     elif r1 < 0.7:
-        service1 = 'ali_service'
+        service1 = 'ali-service'
     elif r1 < 0.9:
-        service1 = 'amazon_service'
+        service1 = 'amazon-service'
     else:
         service1 = None
     d1 = MDemand(
@@ -187,11 +231,11 @@ def generate_market_demand_list(user_id, service_info):
     f2 = 'pay_function'
     r2 = generator_random.random()
     if r2 < 0.3:
-        service2 = 'ali_service'
+        service2 = 'ali-service'
     elif r2 < 0.5:
-        service2 = 'wechat_service'
+        service2 = 'wechat-service'
     elif r2 < 0.6:
-        service2 = 'paypal_service'
+        service2 = 'paypal-service'
     else:
         service2 = None
     d2 = MDemand(
@@ -206,11 +250,11 @@ def generate_market_demand_list(user_id, service_info):
     f2 = 'delivery_function'
     r2 = generator_random.random()
     if r2 < 0.3:
-        service2 = 'shunfeng_service'
+        service2 = 'shunfeng-service'
     elif r2 < 0.5:
-        service2 = 'cainiao_service'
+        service2 = 'cainiao-service'
     elif r2 < 0.6:
-        service2 = 'jindong_service'
+        service2 = 'jindong-service'
     else:
         service2 = None
     d2 = MDemand(
@@ -227,11 +271,11 @@ def generate_market_demand_list(user_id, service_info):
         f2 = 'market_function'
         r2 = generator_random.random()
         if r2 < 0.4:
-            service2 = 'jindong_service'
+            service2 = 'jindong-service'
         elif r2 < 0.7:
-            service2 = 'ali_service'
+            service2 = 'ali-service'
         elif r2 < 0.9:
-            service2 = 'amazon_service'
+            service2 = 'amazon-service'
         else:
             service2 = None
         d2 = MDemand(
@@ -251,9 +295,9 @@ def generate_bike_demand_list(user_id, service_info):
     f1 = 'share_bike_function'
     r1 = generator_random.random()
     if r1 < 0.4:
-        service1 = 'mobi_service'
+        service1 = 'mobi-service'
     elif r1 < 0.8:
-        service1 = 'ofo_service'
+        service1 = 'ofo-service'
     else:
         service1 = None
     d1 = MDemand(
@@ -268,9 +312,9 @@ def generate_bike_demand_list(user_id, service_info):
     f1 = 'navigation_function'
     r1 = generator_random.random()
     if r1 < 0.4:
-        service1 = 'gaode_service'
+        service1 = 'gaode-service'
     elif r1 < 0.8:
-        service1 = 'baidu_service'
+        service1 = 'baidu-service'
     else:
         service1 = None
     d1 = MDemand(
@@ -285,11 +329,11 @@ def generate_bike_demand_list(user_id, service_info):
     f2 = 'pay_function'
     r2 = generator_random.random()
     if r2 < 0.3:
-        service2 = 'ali_service'
+        service2 = 'ali-service'
     elif r2 < 0.5:
-        service2 = 'wechat_service'
+        service2 = 'wechat-service'
     elif r2 < 0.6:
-        service2 = 'paypal_service'
+        service2 = 'paypal-service'
     else:
         service2 = None
     d2 = MDemand(
@@ -309,9 +353,9 @@ def generate_hotel_demand_list(user_id, service_info):
     f1 = 'hotel_function'
     r1 = generator_random.random()
     if r1 < 0.4:
-        service1 = 'xiecheng_service'
+        service1 = 'xiecheng-service'
     elif r1 < 0.8:
-        service1 = 'meituan_service'
+        service1 = 'meituan-service'
     else:
         service1 = None
     d1 = MDemand(
@@ -328,9 +372,9 @@ def generate_hotel_demand_list(user_id, service_info):
         f1 = 'carryout_function'
         r1 = generator_random.random()
         if r1 < 0.4:
-            service1 = 'meituan_service'
+            service1 = 'meituan-service'
         elif r1 < 0.8:
-            service1 = 'eleme_service'
+            service1 = 'eleme-service'
         else:
             service1 = None
         d1 = MDemand(
@@ -345,11 +389,11 @@ def generate_hotel_demand_list(user_id, service_info):
     f2 = 'pay_function'
     r2 = generator_random.random()
     if r2 < 0.3:
-        service2 = 'ali_service'
+        service2 = 'ali-service'
     elif r2 < 0.5:
-        service2 = 'wechat_service'
+        service2 = 'wechat-service'
     elif r2 < 0.6:
-        service2 = 'paypal_service'
+        service2 = 'paypal-service'
     else:
         service2 = None
     d2 = MDemand(
@@ -370,9 +414,9 @@ def generate_game_demand_list(user_id, service_info):
     f1 = 'game_function'
     r1 = generator_random.random()
     if r1 < 0.4:
-        service1 = 'tencent_service'
+        service1 = 'tencent-service'
     elif r1 < 0.8:
-        service1 = 'netease_service'
+        service1 = 'netease-service'
     else:
         service1 = None
     d1 = MDemand(
@@ -389,9 +433,9 @@ def generate_game_demand_list(user_id, service_info):
         f2 = 'chat_function'
         r2 = generator_random.random()
         if r2 < 0.4:
-            service2 = 'tencent_service'
+            service2 = 'tencent-service'
         elif r2 < 0.8:
-            service2 = 'yy_service'
+            service2 = 'yy-service'
         else:
             service2 = None
         d2 = MDemand(
@@ -408,9 +452,9 @@ def generate_game_demand_list(user_id, service_info):
         f2 = 'stream_function'
         r2 = generator_random.random()
         if r2 < 0.4:
-            service2 = 'bilibili_service'
+            service2 = 'bilibili-service'
         elif r2 < 0.8:
-            service2 = 'douyu_service'
+            service2 = 'douyu-service'
         else:
             service2 = None
         d2 = MDemand(
@@ -427,11 +471,11 @@ def generate_game_demand_list(user_id, service_info):
         f2 = 'pay_function'
         r2 = generator_random.random()
         if r2 < 0.3:
-            service2 = 'ali_service'
+            service2 = 'ali-service'
         elif r2 < 0.5:
-            service2 = 'wechat_service'
+            service2 = 'wechat-service'
         elif r2 < 0.6:
-            service2 = 'paypal_service'
+            service2 = 'paypal-service'
         else:
             service2 = None
         d2 = MDemand(
@@ -538,6 +582,45 @@ def generate_user(n, x_max, y_max, service_info):
     for chain in chain_list_curr:
         user_curr.add_demand_chain(chain)
     return user_prev, user_curr
+
+
+def generate_physical_user(n, x, y, service_info):
+    user_id = 'user_{0}'.format(n)
+    position = MPosition(
+        x, y
+    )
+    user_n1 = MUser(user_id, position)
+    user_n2 = MUser(user_id, position)
+    user_n3 = MUser(user_id, position)
+    user_n4 = MUser(user_id, position)
+    user_n5 = MUser(user_id, position)
+
+    canteen_demand_list = generate_canteen_demand_list(user_id, service_info)
+    user_n1.add_demand_chain(canteen_demand_list)
+    user_n2.add_demand_chain(canteen_demand_list)
+    user_n3.add_demand_chain(canteen_demand_list)
+    user_n4.add_demand_chain(canteen_demand_list)
+    user_n5.add_demand_chain(canteen_demand_list)
+
+    market_demand_list = generate_market_demand_list(user_id, service_info)
+    user_n2.add_demand_chain(market_demand_list)
+    user_n3.add_demand_chain(market_demand_list)
+    user_n4.add_demand_chain(market_demand_list)
+    user_n5.add_demand_chain(market_demand_list)
+
+    bike_demand_list = generate_bike_demand_list(user_id, service_info)
+    user_n3.add_demand_chain(bike_demand_list)
+    user_n4.add_demand_chain(bike_demand_list)
+    user_n5.add_demand_chain(bike_demand_list)
+
+    hotel_demand_list = generate_hotel_demand_list(user_id, service_info)
+    user_n4.add_demand_chain(hotel_demand_list)
+    user_n5.add_demand_chain(hotel_demand_list)
+
+    game_demand_list = generate_game_demand_list(user_id, service_info)
+    user_n5.add_demand_chain(game_demand_list)
+
+    return user_n1, user_n2, user_n3, user_n4, user_n5
 
 
 def generate_specific_user(n, x_max, y_max, service_info, common_percent):
@@ -661,9 +744,43 @@ def create_random_user_demand(user_id, result_info):
     return demand_chain
 
 
+def generate_physical_user_set(user_size, service_info, result_dir):
+    percent_list = list(user_position_map.keys())
+    percent_list = sorted(percent_list)
+    x = 0
+    y = 0
+    result_dict = {
+        0: [],
+        300: [],
+        600: [],
+        900: [],
+        1200: []
+    }
+    for i in range(0, user_size):
+        for percent in percent_list:
+            if i < user_size * percent:
+                x = user_position_map[percent]['x']
+                y = user_position_map[percent]['y']
+                break
+        user_n1, user_n2, user_n3, user_n4, user_n5 = generate_physical_user(i, x, y, service_info)
+        result_dict[0].append(user_n1.to_json())
+        result_dict[300].append(user_n2.to_json())
+        result_dict[600].append(user_n3.to_json())
+        result_dict[900].append(user_n4.to_json())
+        result_dict[1200].append(user_n5.to_json())
+    for i in result_dict.keys():
+        target_path = os.path.join(result_dir, str(i))
+        if not os.path.exists(target_path):
+            os.mkdir(target_path)
+        with open(os.path.join(target_path, 'demands.json'), 'w') as f:
+            json.dump(result_dict[i], f)
+
+
 if __name__ == '__main__':
     # info_dict = read_services_info(
     #     '/Workspace/gitlab/mdata/Lab2/ExperimentData/{0}/{1}/service.json'.format('v1', 1000))
     # print(create_random_user_demand('user_0', info_dict).to_json())
     # print(create_specific_user_demand('user_1').to_json())
-    create_specific_user()
+    # create_specific_user()
+    info_dict = read_services_info('D:\Workspace\git\ExperimentTools\service.json')
+    generate_physical_user_set(3000, info_dict, 'D:\Workspace\physical_data')

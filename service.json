@@ -1,821 +1,1234 @@
 [
-    {
-        "generated": false,
-        "serviceName": "ali-service",
-        "gitUrl": "https://github.com/SampleService/ali-service.git",
-        "dockerImageUrl": "septemberhx/ali-service:v1.1",
-        "interfaceMap": {
-            "ali-service-r01__pay_function": {
-                "patternUrl": "/pay",
-                "fullFuncName": "com.sampleservice.ALiService.controller.MainController.payFunction",
-                "slaLevel": 1,
-                "functionId": "pay_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "ali-service-r01__pay_function",
-                "compositionList": null,
-                "serviceId": "ali-service-r01",
-                "inDataSize": 10,
-                "outDataSize": 5
-            },
-            "ali-service-r01__market_function": {
-                "patternUrl": "/market",
-                "fullFuncName": "com.sampleservice.ALiService.controller.MainController.marketFunction",
-                "slaLevel": 1,
-                "functionId": "market_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "ali-service-r01__market_function",
-                "compositionList": null,
-                "serviceId": "ali-service-r01",
-                "inDataSize": 10,
-                "outDataSize": 1000
-            },
-            "ali-service-r01__canteen_function": {
-                "patternUrl": "/canteen",
-                "fullFuncName": "com.sampleservice.ALiService.controller.MainController.canteenFunction",
-                "slaLevel": 2,
-                "functionId": "canteen_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "ali-service-r01__canteen_function",
-                "compositionList": null,
-                "serviceId": "ali-service-r01",
-                "inDataSize": 20,
-                "outDataSize": 2000
-            }
-        },
-        "resource": {
-            "cpu": 200,
-            "ram": 200,
-            "bandwidth": 100
-        },
-        "maxUserCap": 100,
-        "id": "ali-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "ALiService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+  {
+    "generated": false,
+    "serviceName": "ali-service",
+    "gitUrl": "https://github.com/SampleService/ali-service.git",
+    "dockerImageUrl": "septemberhx/ali-service:v1.1",
+    "interfaceMap": {
+      "ali-service-r01__pay_function": {
+        "patternUrl": "/pay",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.payFunction",
+        "slaLevel": 1,
+        "functionId": "pay_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r01__pay_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r01",
+        "inDataSize": 10,
+        "outDataSize": 5
+      },
+      "ali-service-r01__market_function": {
+        "patternUrl": "/market",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.marketFunction",
+        "slaLevel": 1,
+        "functionId": "market_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r01__market_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r01",
+        "inDataSize": 10,
+        "outDataSize": 300
+      },
+      "ali-service-r01__canteen_function": {
+        "patternUrl": "/canteen",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.canteenFunction",
+        "slaLevel": 2,
+        "functionId": "canteen_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r01__canteen_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r01",
+        "inDataSize": 20,
+        "outDataSize": 200
+      }
     },
-    {
-        "generated": false,
-        "serviceName": "wechat-service",
-        "gitUrl": "https://github.com/SampleService/wechat-service.git",
-        "dockerImageUrl": "septemberhx/wechat-service:v1.0",
-        "interfaceMap": {
-            "wechat-service-r01__pay_function": {
-                "patternUrl": "/pay",
-                "fullFuncName": "com.sampleservice.wechatservice.controller.MainController.payFunction",
-                "slaLevel": 1,
-                "functionId": "pay_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "wechat-service-r01__pay_function",
-                "compositionList": null,
-                "serviceId": "wechat-service-r01",
-                "inDataSize": 10,
-                "outDataSize": 10
-            }
-        },
-        "resource": {
-            "cpu": 100,
-            "ram": 100,
-            "bandwidth": 100
-        },
-        "maxUserCap": 80,
-        "id": "wechat-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "WechatService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "resource": {
+      "cpu": 200,
+      "ram": 200,
+      "bandwidth": 100
     },
-    {
-        "generated": false,
-        "serviceName": "paypal-service",
-        "gitUrl": "https://github.com/SampleService/paypal-service.git",
-        "dockerImageUrl": "septemberhx/paypal-service:v1.0",
-        "interfaceMap": {
-            "paypal-service-r01__pay_function": {
-                "patternUrl": "/pay",
-                "fullFuncName": "com.sampleservice.paypalservice.controller.MainController.payFunction",
-                "slaLevel": 1,
-                "functionId": "pay_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "paypal-service-r01__pay_function",
-                "compositionList": null,
-                "serviceId": "paypal-service-r01",
-                "inDataSize": 20,
-                "outDataSize": 40
-            }
-        },
-        "resource": {
-            "cpu": 120,
-            "ram": 200,
-            "bandwidth": 100
-        },
-        "maxUserCap": 50,
-        "id": "paypal-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "PaypalService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "maxUserCap": 100,
+    "id": "ali-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "ALiService",
+      "version": "1.0-SNAPSHOT"
     },
-    {
-        "generated": false,
-        "serviceName": "shunfeng-service",
-        "gitUrl": "https://github.com/SampleService/shunfeng-service.git",
-        "dockerImageUrl": "septemberhx/shunfeng-service:v1.0",
-        "interfaceMap": {
-            "shunfeng-service-r01__delivery_function": {
-                "patternUrl": "/delivery",
-                "fullFuncName": "com.sampleservice.shunfengservice.controller.MainController.payFunction",
-                "slaLevel": 3,
-                "functionId": "delivery_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "shunfeng-service-r01__delivery_function",
-                "compositionList": null,
-                "serviceId": "shunfeng-service-r01",
-                "inDataSize": 200,
-                "outDataSize": 2000
-            }
-        },
-        "resource": {
-            "cpu": 120,
-            "ram": 200,
-            "bandwidth": 100
-        },
-        "maxUserCap": 80,
-        "id": "shunfeng-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "ShunFengService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "ali-service",
+    "gitUrl": "https://github.com/SampleService/ali-service.git",
+    "dockerImageUrl": "septemberhx/ali-service:v1.1",
+    "interfaceMap": {
+      "ali-service-r02__pay_function": {
+        "patternUrl": "/pay",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.payFunction",
+        "slaLevel": 1,
+        "functionId": "pay_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r02__pay_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r02",
+        "inDataSize": 10,
+        "outDataSize": 5
+      },
+      "ali-service-r02__market_function": {
+        "patternUrl": "/market",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.marketFunction",
+        "slaLevel": 1,
+        "functionId": "market_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r02__market_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r02",
+        "inDataSize": 10,
+        "outDataSize": 300
+      },
+      "ali-service-r02__canteen_function": {
+        "patternUrl": "/canteen",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.canteenFunction",
+        "slaLevel": 2,
+        "functionId": "canteen_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r02__canteen_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r02",
+        "inDataSize": 20,
+        "outDataSize": 200
+      }
     },
-    {
-        "generated": false,
-        "serviceName": "cainiao-service",
-        "gitUrl": "https://github.com/SampleService/cainiao-service.git",
-        "dockerImageUrl": "septemberhx/cainiao-service:v1.0",
-        "interfaceMap": {
-            "cainiao-service-r01__delivery_function": {
-                "patternUrl": "/delivery",
-                "fullFuncName": "com.sampleservice.cainiaoservice.controller.MainController.payFunction",
-                "slaLevel": 2,
-                "functionId": "delivery_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "cainiao-service-r01__delivery_function",
-                "compositionList": null,
-                "serviceId": "cainiao-service-r01",
-                "inDataSize": 200,
-                "outDataSize": 1000
-            }
-        },
-        "resource": {
-            "cpu": 200,
-            "ram": 200,
-            "bandwidth": 100
-        },
-        "maxUserCap": 80,
-        "id": "cainiao-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "CainiaoService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "resource": {
+      "cpu": 300,
+      "ram": 300,
+      "bandwidth": 100
     },
-    {
-        "generated": false,
-        "serviceName": "jindong-service",
-        "gitUrl": "https://github.com/SampleService/jindong-service.git",
-        "dockerImageUrl": "septemberhx/jindong-service:v1.0",
-        "interfaceMap": {
-            "jindong-service-r01__delivery_function": {
-                "patternUrl": "/delivery",
-                "fullFuncName": "com.sampleservice.jindongservice.controller.MainController.deliveryFunction",
-                "slaLevel": 2,
-                "functionId": "delivery_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "jindong-service-r01__delivery_function",
-                "compositionList": null,
-                "serviceId": "jindong-service-r01",
-                "inDataSize": 200,
-                "outDataSize": 1000
-            },
-            "jindong-service-r01__market_function": {
-                "patternUrl": "/market",
-                "fullFuncName": "com.sampleservice.jindongservice.controller.MainController.marketFunction",
-                "slaLevel": 2,
-                "functionId": "market_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "jindong-service-r01__market_function",
-                "compositionList": null,
-                "serviceId": "jindong-service-r01",
-                "inDataSize": 200,
-                "outDataSize": 1000
-            }
-        },
-        "resource": {
-            "cpu": 300,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 110,
-        "id": "jindong-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "JindongService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "maxUserCap": 150,
+    "id": "ali-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "ALiService",
+      "version": "1.0-SNAPSHOT"
     },
-    {
-        "generated": false,
-        "serviceName": "amazon-service",
-        "gitUrl": "https://github.com/SampleService/amazon-service.git",
-        "dockerImageUrl": "septemberhx/amazon-service:v1.0",
-        "interfaceMap": {
-            "amazon-service-r01__market_function": {
-                "patternUrl": "/market",
-                "fullFuncName": "com.sampleservice.amazonservice.controller.MainController.marketFunction",
-                "slaLevel": 2,
-                "functionId": "market_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "amazon-service-r01__market_function",
-                "compositionList": null,
-                "serviceId": "amazon-service-r01",
-                "inDataSize": 100,
-                "outDataSize": 2000
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 200,
-        "id": "amazon-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "AmazonService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "ali-service",
+    "gitUrl": "https://github.com/SampleService/ali-service.git",
+    "dockerImageUrl": "septemberhx/ali-service:v1.1",
+    "interfaceMap": {
+      "ali-service-r03__pay_function": {
+        "patternUrl": "/pay",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.payFunction",
+        "slaLevel": 1,
+        "functionId": "pay_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r03__pay_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r03",
+        "inDataSize": 10,
+        "outDataSize": 5
+      },
+      "ali-service-r03__market_function": {
+        "patternUrl": "/market",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.marketFunction",
+        "slaLevel": 1,
+        "functionId": "market_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r03__market_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r03",
+        "inDataSize": 10,
+        "outDataSize": 300
+      },
+      "ali-service-r03__canteen_function": {
+        "patternUrl": "/canteen",
+        "fullFuncName": "com.sampleservice.ALiService.controller.MainController.canteenFunction",
+        "slaLevel": 2,
+        "functionId": "canteen_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ali-service-r03__canteen_function",
+        "compositionList": null,
+        "serviceId": "ali-service-r03",
+        "inDataSize": 20,
+        "outDataSize": 200
+      }
     },
-    {
-        "generated": false,
-        "serviceName": "didi-service",
-        "gitUrl": " https://github.com/SampleService/didi-service.git",
-        "dockerImageUrl": "septemberhx/didi-service:v1.0",
-        "interfaceMap": {
-            "didi-service-r01__car_function": {
-                "patternUrl": "/car",
-                "fullFuncName": "com.sampleservice.didiservice.controller.MainController.carFunction",
-                "slaLevel": 2,
-                "functionId": "car_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "didi-service-r01__car_function",
-                "compositionList": null,
-                "serviceId": "didi-service-r01",
-                "inDataSize": 1000,
-                "outDataSize": 1000
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 300,
-        "id": "didi-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "DidiService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
     },
-    {
-        "generated": false,
-        "serviceName": "taxi-service",
-        "gitUrl": "https://github.com/SampleService/taxi-service.git",
-        "dockerImageUrl": "septemberhx/taxi-service:v1.0",
-        "interfaceMap": {
-            "taxi-service-r01__car_function": {
-                "patternUrl": "/car",
-                "fullFuncName": "com.sampleservice.taxiservice.controller.MainController.carFunction",
-                "slaLevel": 1,
-                "functionId": "car_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "taxi-service-r01__car_function",
-                "compositionList": null,
-                "serviceId": "taxi-service-r01",
-                "inDataSize": 1500,
-                "outDataSize": 200
-            }
-        },
-        "resource": {
-            "cpu": 800,
-            "ram": 300,
-            "bandwidth": 100
-        },
-        "maxUserCap": 300,
-        "id": "taxi-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "TaxiService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "maxUserCap": 250,
+    "id": "ali-service-r03",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "ALiService",
+      "version": "1.0-SNAPSHOT"
     },
-    {
-        "generated": false,
-        "serviceName": "mobi-service",
-        "gitUrl": "https://github.com/SampleService/mobi-service.git",
-        "dockerImageUrl": "septemberhx/mobi-service:v1.0",
-        "interfaceMap": {
-            "mobi-service-r01__share_bike_function": {
-                "patternUrl": "/shareBike",
-                "fullFuncName": "com.sampleservice.mobiservice.controller.MainController.shareBikeFunction",
-                "slaLevel": 1,
-                "functionId": "share_bike_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "mobi-service-r01__share_bike_function",
-                "compositionList": null,
-                "serviceId": "mobi-service-r01",
-                "inDataSize": 100,
-                "outDataSize": 2000
-            }
-        },
-        "resource": {
-            "cpu": 220,
-            "ram": 330,
-            "bandwidth": 100
-        },
-        "maxUserCap": 110,
-        "id": "mobi-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "MobiService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "rId": "r03"
+  },
+  {
+    "generated": false,
+    "serviceName": "wechat-service",
+    "gitUrl": "https://github.com/SampleService/wechat-service.git",
+    "dockerImageUrl": "septemberhx/wechat-service:v1.0",
+    "interfaceMap": {
+      "wechat-service-r01__pay_function": {
+        "patternUrl": "/pay",
+        "fullFuncName": "com.sampleservice.wechatservice.controller.MainController.payFunction",
+        "slaLevel": 1,
+        "functionId": "pay_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "wechat-service-r01__pay_function",
+        "compositionList": null,
+        "serviceId": "wechat-service-r01",
+        "inDataSize": 10,
+        "outDataSize": 10
+      }
     },
-    {
-        "generated": false,
-        "serviceName": "ofo-service",
-        "gitUrl": "https://github.com/SampleService/ofo-service.git",
-        "dockerImageUrl": "septemberhx/ofo-service:v1.0",
-        "interfaceMap": {
-            "ofo-service-r01__share_bike_function": {
-                "patternUrl": "/shareBike",
-                "fullFuncName": "com.sampleservice.ofoservice.controller.MainController.shareBikeFunction",
-                "slaLevel": 3,
-                "functionId": "share_bike_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "ofo-service-r01__share_bike_function",
-                "compositionList": null,
-                "serviceId": "ofo-service-r01",
-                "inDataSize": 100,
-                "outDataSize": 1500
-            }
-        },
-        "resource": {
-            "cpu": 400,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 230,
-        "id": "ofo-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "OfoService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "resource": {
+      "cpu": 100,
+      "ram": 100,
+      "bandwidth": 100
     },
-    {
-        "generated": false,
-        "serviceName": "gaode-service",
-        "gitUrl": "https://github.com/SampleService/gaode-service.git",
-        "dockerImageUrl": "septemberhx/gaode-service:v1.0",
-        "interfaceMap": {
-            "gaode-service-r01__navigation_function": {
-                "patternUrl": "/navigation",
-                "fullFuncName": "com.sampleservice.gaodeservice.controller.MainController.navigationFunction",
-                "slaLevel": 2,
-                "functionId": "navigation_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "gaode-service-r01__navigation_function",
-                "compositionList": null,
-                "serviceId": "gaode-service-r01",
-                "inDataSize": 800,
-                "outDataSize": 1000
-            }
-        },
-        "resource": {
-            "cpu": 400,
-            "ram": 400,
-            "bandwidth": 100
-        },
-        "maxUserCap": 100,
-        "id": "gaode-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "GaodeService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "maxUserCap": 80,
+    "id": "wechat-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "WechatService",
+      "version": "1.0-SNAPSHOT"
     },
-    {
-        "generated": false,
-        "serviceName": "baidu-service",
-        "gitUrl": "https://github.com/SampleService/baidu-service.git",
-        "dockerImageUrl": "septemberhx/baidu-service:v1.0",
-        "interfaceMap": {
-            "baidu-service-r01__navigation_function": {
-                "patternUrl": "/navigation",
-                "fullFuncName": "com.sampleservice.baiduservice.controller.MainController.navigationFunction",
-                "slaLevel": 2,
-                "functionId": "navigation_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "baidu-service-r01__navigation_function",
-                "compositionList": null,
-                "serviceId": "baidu-service-r01",
-                "inDataSize": 450,
-                "outDataSize": 600
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 150,
-        "id": "baidu-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "BaiduService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "wechat-service",
+    "gitUrl": "https://github.com/SampleService/wechat-service.git",
+    "dockerImageUrl": "septemberhx/wechat-service:v1.0",
+    "interfaceMap": {
+      "wechat-service-r02__pay_function": {
+        "patternUrl": "/pay",
+        "fullFuncName": "com.sampleservice.wechatservice.controller.MainController.payFunction",
+        "slaLevel": 1,
+        "functionId": "pay_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "wechat-service-r02__pay_function",
+        "compositionList": null,
+        "serviceId": "wechat-service-r02",
+        "inDataSize": 10,
+        "outDataSize": 10
+      }
     },
-    {
-        "generated": false,
-        "serviceName": "xiecheng-service",
-        "gitUrl": "https://github.com/SampleService/xiecheng-service.git",
-        "dockerImageUrl": "septemberhx/xiecheng-service:v1.0",
-        "interfaceMap": {
-            "xiecheng-service-r01__hotel_function": {
-                "patternUrl": "/hotel",
-                "fullFuncName": "com.sampleservice.xiechengservice.controller.MainController.hotelFunction",
-                "slaLevel": 1,
-                "functionId": "hotel_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "xiecheng-service-r01__hotel_function",
-                "compositionList": null,
-                "serviceId": "xiecheng-service-r01",
-                "inDataSize": 100,
-                "outDataSize": 500
-            }
-        },
-        "resource": {
-            "cpu": 300,
-            "ram": 300,
-            "bandwidth": 100
-        },
-        "maxUserCap": 250,
-        "id": "xiecheng-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "XiechengService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "resource": {
+      "cpu": 150,
+      "ram": 150,
+      "bandwidth": 100
     },
-    {
-        "generated": false,
-        "serviceName": "meituan-service",
-        "gitUrl": "https://github.com/SampleService/meituan-service.git",
-        "dockerImageUrl": "septemberhx/meituan-service:v1.0",
-        "interfaceMap": {
-            "meituan-service-r01__hotel_function": {
-                "patternUrl": "/hotel",
-                "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.hotelFunction",
-                "slaLevel": 1,
-                "functionId": "hotel_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "meituan-service-r01__hotel_function",
-                "compositionList": null,
-                "serviceId": "meituan-service-r01",
-                "inDataSize": 100,
-                "outDataSize": 300
-            },
-            "meituan-service-r01__canteen_function": {
-                "patternUrl": "/canteen",
-                "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.canteenFunction",
-                "slaLevel": 2,
-                "functionId": "canteen_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "meituan-service-r01__canteen_function",
-                "compositionList": null,
-                "serviceId": "meituan-service-r01",
-                "inDataSize": 300,
-                "outDataSize": 500
-            },
-            "meituan-service-r01__carryout_function": {
-                "patternUrl": "/carryout",
-                "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.carryoutFunction",
-                "slaLevel": 1,
-                "functionId": "carryout_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "meituan-service-r01__carryout_function",
-                "compositionList": null,
-                "serviceId": "meituan-service-r01",
-                "inDataSize": 300,
-                "outDataSize": 400
-            }
-        },
-        "resource": {
-            "cpu": 200,
-            "ram": 400,
-            "bandwidth": 100
-        },
-        "maxUserCap": 150,
-        "id": "meituan-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "MeituanService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "maxUserCap": 130,
+    "id": "wechat-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "WechatService",
+      "version": "1.0-SNAPSHOT"
     },
-    {
-        "generated": false,
-        "serviceName": "eleme-service",
-        "gitUrl": "https://github.com/SampleService/eleme-service.git",
-        "dockerImageUrl": "septemberhx/eleme-service:v1.0",
-        "interfaceMap": {
-            "eleme-service-r01__carryout_function": {
-                "patternUrl": "/carryout",
-                "fullFuncName": "com.sampleservice.elemeservice.controller.MainController.carryoutFunction",
-                "slaLevel": 1,
-                "functionId": "carryout_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "eleme-service-r01__carryout_function",
-                "compositionList": null,
-                "serviceId": "eleme-service-r01",
-                "inDataSize": 10,
-                "outDataSize": 1000
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 100,
-        "id": "eleme-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "ElemeService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "paypal-service",
+    "gitUrl": "https://github.com/SampleService/paypal-service.git",
+    "dockerImageUrl": "septemberhx/paypal-service:v1.0",
+    "interfaceMap": {
+      "paypal-service-r01__pay_function": {
+        "patternUrl": "/pay",
+        "fullFuncName": "com.sampleservice.paypalservice.controller.MainController.payFunction",
+        "slaLevel": 1,
+        "functionId": "pay_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "paypal-service-r01__pay_function",
+        "compositionList": null,
+        "serviceId": "paypal-service-r01",
+        "inDataSize": 20,
+        "outDataSize": 40
+      }
     },
-    {
-        "generated": false,
-        "serviceName": "tencent-service",
-        "gitUrl": "https://github.com/SampleService/tencent-service.git",
-        "dockerImageUrl": "septemberhx/tencent-service:v1.0",
-        "interfaceMap": {
-            "tencent-service-r01__game_function": {
-                "patternUrl": "/game",
-                "fullFuncName": "com.sampleservice.tencentservice.controller.MainController.gameFunction",
-                "slaLevel": 2,
-                "functionId": "game_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "tencent-service-r01__game_function",
-                "compositionList": null,
-                "serviceId": "tencent-service-r01",
-                "inDataSize": 200,
-                "outDataSize": 400
-            },
-            "tencent-service-r01__chat_function": {
-                "patternUrl": "/chat",
-                "fullFuncName": "com.sampleservice.tencentservice.controller.MainController.chatFunction",
-                "slaLevel": 2,
-                "functionId": "chat_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "tencent-service-r01__chat_function",
-                "compositionList": null,
-                "serviceId": "tencent-service-r01",
-                "inDataSize": 1000,
-                "outDataSize": 1000
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 50,
-        "id": "tencent-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "TencentService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "resource": {
+      "cpu": 120,
+      "ram": 200,
+      "bandwidth": 100
     },
-    {
-        "generated": false,
-        "serviceName": "netease-service",
-        "gitUrl": "https://github.com/SampleService/netease-service.git",
-        "dockerImageUrl": "septemberhx/netease-service:v1.0",
-        "interfaceMap": {
-            "netease-service-r01__game_function": {
-                "patternUrl": "/game",
-                "fullFuncName": "com.sampleservice.neteaseservice.controller.MainController.gameFunction",
-                "slaLevel": 2,
-                "functionId": "game_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "netease-service-r01__game_function",
-                "compositionList": null,
-                "serviceId": "netease-service-r01",
-                "inDataSize": 200,
-                "outDataSize": 500
-            }
-        },
-        "resource": {
-            "cpu": 300,
-            "ram": 200,
-            "bandwidth": 100
-        },
-        "maxUserCap": 100,
-        "id": "netease-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "NeteaseService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "maxUserCap": 50,
+    "id": "paypal-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "PaypalService",
+      "version": "1.0-SNAPSHOT"
     },
-    {
-        "generated": false,
-        "serviceName": "yy-service",
-        "gitUrl": "https://github.com/SampleService/yy-service.git",
-        "dockerImageUrl": "septemberhx/yy-service:v1.0",
-        "interfaceMap": {
-            "yy-service-r01__chat_function": {
-                "patternUrl": "/chat",
-                "fullFuncName": "com.sampleservice.yyservice.controller.MainController.chatFunction",
-                "slaLevel": 1,
-                "functionId": "chat_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "yy-service-r01__chat_function",
-                "compositionList": null,
-                "serviceId": "yy-service-r01",
-                "inDataSize": 2000,
-                "outDataSize": 1000
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 60,
-        "id": "yy-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "YYService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "shunfeng-service",
+    "gitUrl": "https://github.com/SampleService/shunfeng-service.git",
+    "dockerImageUrl": "septemberhx/shunfeng-service:v1.0",
+    "interfaceMap": {
+      "shunfeng-service-r01__delivery_function": {
+        "patternUrl": "/delivery",
+        "fullFuncName": "com.sampleservice.shunfengservice.controller.MainController.payFunction",
+        "slaLevel": 3,
+        "functionId": "delivery_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "shunfeng-service-r01__delivery_function",
+        "compositionList": null,
+        "serviceId": "shunfeng-service-r01",
+        "inDataSize": 100,
+        "outDataSize": 300
+      }
     },
-    {
-        "generated": false,
-        "serviceName": "bilibili-service",
-        "gitUrl": "https://github.com/SampleService/bilibili-service.git",
-        "dockerImageUrl": "septemberhx/bilibili-service:v1.0",
-        "interfaceMap": {
-            "bilibili-service-r01__stream_function": {
-                "patternUrl": "/stream",
-                "fullFuncName": "com.sampleservice.bilibiliservice.controller.MainController.streamFunction",
-                "slaLevel": 2,
-                "functionId": "stream_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "bilibili-service-r01__stream_function",
-                "compositionList": null,
-                "serviceId": "bilibili-service-r01",
-                "inDataSize": 2000,
-                "outDataSize": 10
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 400,
-            "bandwidth": 100
-        },
-        "maxUserCap": 50,
-        "id": "bilibili-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "BilibiliService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
+    "resource": {
+      "cpu": 120,
+      "ram": 200,
+      "bandwidth": 100
     },
-    {
-        "generated": false,
-        "serviceName": "douyu-service",
-        "gitUrl": "https://github.com/SampleService/douyu-service.git",
-        "dockerImageUrl": "septemberhx/douyu-service:v1.0",
-        "interfaceMap": {
-            "douyu-service-r01__stream_function": {
-                "patternUrl": "/stream",
-                "fullFuncName": "com.sampleservice.douyuservice.controller.MainController.streamFunction",
-                "slaLevel": 1,
-                "functionId": "stream_function",
-                "cpuResource": 0,
-                "ramResource": 0,
-                "maxUserNum": 100,
-                "interfaceId": "douyu-service-r01__stream_function",
-                "compositionList": null,
-                "serviceId": "douyu-service-r01",
-                "inDataSize": 3000,
-                "outDataSize": 30
-            }
-        },
-        "resource": {
-            "cpu": 500,
-            "ram": 500,
-            "bandwidth": 100
-        },
-        "maxUserCap": 200,
-        "id": "douyu-service-r01",
-        "artifactInfo": {
-            "groupId": "com.sampleservice",
-            "artifactId": "DouyuService",
-            "version": "1.0-SNAPSHOT"
-        },
-        "rId": "r01"
-    }
+    "maxUserCap": 80,
+    "id": "shunfeng-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "ShunFengService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "cainiao-service",
+    "gitUrl": "https://github.com/SampleService/cainiao-service.git",
+    "dockerImageUrl": "septemberhx/cainiao-service:v1.0",
+    "interfaceMap": {
+      "cainiao-service-r01__delivery_function": {
+        "patternUrl": "/delivery",
+        "fullFuncName": "com.sampleservice.cainiaoservice.controller.MainController.payFunction",
+        "slaLevel": 2,
+        "functionId": "delivery_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "cainiao-service-r01__delivery_function",
+        "compositionList": null,
+        "serviceId": "cainiao-service-r01",
+        "inDataSize": 100,
+        "outDataSize": 300
+      }
+    },
+    "resource": {
+      "cpu": 200,
+      "ram": 200,
+      "bandwidth": 100
+    },
+    "maxUserCap": 80,
+    "id": "cainiao-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "CainiaoService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "cainiao-service",
+    "gitUrl": "https://github.com/SampleService/cainiao-service.git",
+    "dockerImageUrl": "septemberhx/cainiao-service:v1.0",
+    "interfaceMap": {
+      "cainiao-service-r02__delivery_function": {
+        "patternUrl": "/delivery",
+        "fullFuncName": "com.sampleservice.cainiaoservice.controller.MainController.payFunction",
+        "slaLevel": 2,
+        "functionId": "delivery_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "cainiao-service-r02__delivery_function",
+        "compositionList": null,
+        "serviceId": "cainiao-service-r02",
+        "inDataSize": 100,
+        "outDataSize": 300
+      }
+    },
+    "resource": {
+      "cpu": 200,
+      "ram": 400,
+      "bandwidth": 100
+    },
+    "maxUserCap": 100,
+    "id": "cainiao-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "CainiaoService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "jindong-service",
+    "gitUrl": "https://github.com/SampleService/jindong-service.git",
+    "dockerImageUrl": "septemberhx/jindong-service:v1.0",
+    "interfaceMap": {
+      "jindong-service-r01__delivery_function": {
+        "patternUrl": "/delivery",
+        "fullFuncName": "com.sampleservice.jindongservice.controller.MainController.deliveryFunction",
+        "slaLevel": 2,
+        "functionId": "delivery_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "jindong-service-r01__delivery_function",
+        "compositionList": null,
+        "serviceId": "jindong-service-r01",
+        "inDataSize": 100,
+        "outDataSize": 250
+      },
+      "jindong-service-r01__market_function": {
+        "patternUrl": "/market",
+        "fullFuncName": "com.sampleservice.jindongservice.controller.MainController.marketFunction",
+        "slaLevel": 2,
+        "functionId": "market_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "jindong-service-r01__market_function",
+        "compositionList": null,
+        "serviceId": "jindong-service-r01",
+        "inDataSize": 100,
+        "outDataSize": 300
+      }
+    },
+    "resource": {
+      "cpu": 300,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 110,
+    "id": "jindong-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "JindongService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "amazon-service",
+    "gitUrl": "https://github.com/SampleService/amazon-service.git",
+    "dockerImageUrl": "septemberhx/amazon-service:v1.0",
+    "interfaceMap": {
+      "amazon-service-r01__market_function": {
+        "patternUrl": "/market",
+        "fullFuncName": "com.sampleservice.amazonservice.controller.MainController.marketFunction",
+        "slaLevel": 2,
+        "functionId": "market_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "amazon-service-r01__market_function",
+        "compositionList": null,
+        "serviceId": "amazon-service-r01",
+        "inDataSize": 100,
+        "outDataSize": 500
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 200,
+    "id": "amazon-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "AmazonService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "didi-service",
+    "gitUrl": " https://github.com/SampleService/didi-service.git",
+    "dockerImageUrl": "septemberhx/didi-service:v1.0",
+    "interfaceMap": {
+      "didi-service-r01__car_function": {
+        "patternUrl": "/car",
+        "fullFuncName": "com.sampleservice.didiservice.controller.MainController.carFunction",
+        "slaLevel": 2,
+        "functionId": "car_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "didi-service-r01__car_function",
+        "compositionList": null,
+        "serviceId": "didi-service-r01",
+        "inDataSize": 10,
+        "outDataSize": 50
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 300,
+    "id": "didi-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "DidiService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "taxi-service",
+    "gitUrl": "https://github.com/SampleService/taxi-service.git",
+    "dockerImageUrl": "septemberhx/taxi-service:v1.0",
+    "interfaceMap": {
+      "taxi-service-r01__car_function": {
+        "patternUrl": "/car",
+        "fullFuncName": "com.sampleservice.taxiservice.controller.MainController.carFunction",
+        "slaLevel": 1,
+        "functionId": "car_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "taxi-service-r01__car_function",
+        "compositionList": null,
+        "serviceId": "taxi-service-r01",
+        "inDataSize": 15,
+        "outDataSize": 40
+      }
+    },
+    "resource": {
+      "cpu": 800,
+      "ram": 300,
+      "bandwidth": 100
+    },
+    "maxUserCap": 300,
+    "id": "taxi-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "TaxiService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "mobi-service",
+    "gitUrl": "https://github.com/SampleService/mobi-service.git",
+    "dockerImageUrl": "septemberhx/mobi-service:v1.0",
+    "interfaceMap": {
+      "mobi-service-r01__share_bike_function": {
+        "patternUrl": "/shareBike",
+        "fullFuncName": "com.sampleservice.mobiservice.controller.MainController.shareBikeFunction",
+        "slaLevel": 1,
+        "functionId": "share_bike_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "mobi-service-r01__share_bike_function",
+        "compositionList": null,
+        "serviceId": "mobi-service-r01",
+        "inDataSize": 10,
+        "outDataSize": 100
+      }
+    },
+    "resource": {
+      "cpu": 220,
+      "ram": 330,
+      "bandwidth": 100
+    },
+    "maxUserCap": 110,
+    "id": "mobi-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "MobiService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "mobi-service",
+    "gitUrl": "https://github.com/SampleService/mobi-service.git",
+    "dockerImageUrl": "septemberhx/mobi-service:v1.0",
+    "interfaceMap": {
+      "mobi-service-r02__share_bike_function": {
+        "patternUrl": "/shareBike",
+        "fullFuncName": "com.sampleservice.mobiservice.controller.MainController.shareBikeFunction",
+        "slaLevel": 1,
+        "functionId": "share_bike_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "mobi-service-r02__share_bike_function",
+        "compositionList": null,
+        "serviceId": "mobi-service-r02",
+        "inDataSize": 10,
+        "outDataSize": 100
+      }
+    },
+    "resource": {
+      "cpu": 420,
+      "ram": 430,
+      "bandwidth": 100
+    },
+    "maxUserCap": 160,
+    "id": "mobi-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "MobiService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "ofo-service",
+    "gitUrl": "https://github.com/SampleService/ofo-service.git",
+    "dockerImageUrl": "septemberhx/ofo-service:v1.0",
+    "interfaceMap": {
+      "ofo-service-r01__share_bike_function": {
+        "patternUrl": "/shareBike",
+        "fullFuncName": "com.sampleservice.ofoservice.controller.MainController.shareBikeFunction",
+        "slaLevel": 3,
+        "functionId": "share_bike_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "ofo-service-r01__share_bike_function",
+        "compositionList": null,
+        "serviceId": "ofo-service-r01",
+        "inDataSize": 10,
+        "outDataSize": 150
+      }
+    },
+    "resource": {
+      "cpu": 400,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 230,
+    "id": "ofo-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "OfoService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "gaode-service",
+    "gitUrl": "https://github.com/SampleService/gaode-service.git",
+    "dockerImageUrl": "septemberhx/gaode-service:v1.0",
+    "interfaceMap": {
+      "gaode-service-r01__navigation_function": {
+        "patternUrl": "/navigation",
+        "fullFuncName": "com.sampleservice.gaodeservice.controller.MainController.navigationFunction",
+        "slaLevel": 2,
+        "functionId": "navigation_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "gaode-service-r01__navigation_function",
+        "compositionList": null,
+        "serviceId": "gaode-service-r01",
+        "inDataSize": 80,
+        "outDataSize": 300
+      }
+    },
+    "resource": {
+      "cpu": 400,
+      "ram": 400,
+      "bandwidth": 100
+    },
+    "maxUserCap": 100,
+    "id": "gaode-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "GaodeService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "gaode-service",
+    "gitUrl": "https://github.com/SampleService/gaode-service.git",
+    "dockerImageUrl": "septemberhx/gaode-service:v1.0",
+    "interfaceMap": {
+      "gaode-service-r02__navigation_function": {
+        "patternUrl": "/navigation",
+        "fullFuncName": "com.sampleservice.gaodeservice.controller.MainController.navigationFunction",
+        "slaLevel": 2,
+        "functionId": "navigation_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "gaode-service-r02__navigation_function",
+        "compositionList": null,
+        "serviceId": "gaode-service-r02",
+        "inDataSize": 80,
+        "outDataSize": 300
+      }
+    },
+    "resource": {
+      "cpu": 600,
+      "ram": 800,
+      "bandwidth": 100
+    },
+    "maxUserCap": 150,
+    "id": "gaode-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "GaodeService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "baidu-service",
+    "gitUrl": "https://github.com/SampleService/baidu-service.git",
+    "dockerImageUrl": "septemberhx/baidu-service:v1.0",
+    "interfaceMap": {
+      "baidu-service-r01__navigation_function": {
+        "patternUrl": "/navigation",
+        "fullFuncName": "com.sampleservice.baiduservice.controller.MainController.navigationFunction",
+        "slaLevel": 2,
+        "functionId": "navigation_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "baidu-service-r01__navigation_function",
+        "compositionList": null,
+        "serviceId": "baidu-service-r01",
+        "inDataSize": 50,
+        "outDataSize": 200
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 150,
+    "id": "baidu-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "BaiduService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "xiecheng-service",
+    "gitUrl": "https://github.com/SampleService/xiecheng-service.git",
+    "dockerImageUrl": "septemberhx/xiecheng-service:v1.0",
+    "interfaceMap": {
+      "xiecheng-service-r01__hotel_function": {
+        "patternUrl": "/hotel",
+        "fullFuncName": "com.sampleservice.xiechengservice.controller.MainController.hotelFunction",
+        "slaLevel": 1,
+        "functionId": "hotel_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "xiecheng-service-r01__hotel_function",
+        "compositionList": null,
+        "serviceId": "xiecheng-service-r01",
+        "inDataSize": 100,
+        "outDataSize": 500
+      }
+    },
+    "resource": {
+      "cpu": 300,
+      "ram": 300,
+      "bandwidth": 100
+    },
+    "maxUserCap": 250,
+    "id": "xiecheng-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "XiechengService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "xiecheng-service",
+    "gitUrl": "https://github.com/SampleService/xiecheng-service.git",
+    "dockerImageUrl": "septemberhx/xiecheng-service:v1.0",
+    "interfaceMap": {
+      "xiecheng-service-r02__hotel_function": {
+        "patternUrl": "/hotel",
+        "fullFuncName": "com.sampleservice.xiechengservice.controller.MainController.hotelFunction",
+        "slaLevel": 1,
+        "functionId": "hotel_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "xiecheng-service-r02__hotel_function",
+        "compositionList": null,
+        "serviceId": "xiecheng-service-r02",
+        "inDataSize": 100,
+        "outDataSize": 500
+      }
+    },
+    "resource": {
+      "cpu": 600,
+      "ram": 600,
+      "bandwidth": 100
+    },
+    "maxUserCap": 400,
+    "id": "xiecheng-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "XiechengService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "meituan-service",
+    "gitUrl": "https://github.com/SampleService/meituan-service.git",
+    "dockerImageUrl": "septemberhx/meituan-service:v1.0",
+    "interfaceMap": {
+      "meituan-service-r01__hotel_function": {
+        "patternUrl": "/hotel",
+        "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.hotelFunction",
+        "slaLevel": 1,
+        "functionId": "hotel_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "meituan-service-r01__hotel_function",
+        "compositionList": null,
+        "serviceId": "meituan-service-r01",
+        "inDataSize": 100,
+        "outDataSize": 300
+      },
+      "meituan-service-r01__canteen_function": {
+        "patternUrl": "/canteen",
+        "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.canteenFunction",
+        "slaLevel": 2,
+        "functionId": "canteen_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "meituan-service-r01__canteen_function",
+        "compositionList": null,
+        "serviceId": "meituan-service-r01",
+        "inDataSize": 300,
+        "outDataSize": 500
+      },
+      "meituan-service-r01__carryout_function": {
+        "patternUrl": "/carryout",
+        "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.carryoutFunction",
+        "slaLevel": 1,
+        "functionId": "carryout_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "meituan-service-r01__carryout_function",
+        "compositionList": null,
+        "serviceId": "meituan-service-r01",
+        "inDataSize": 300,
+        "outDataSize": 400
+      }
+    },
+    "resource": {
+      "cpu": 200,
+      "ram": 400,
+      "bandwidth": 100
+    },
+    "maxUserCap": 150,
+    "id": "meituan-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "MeituanService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "meituan-service",
+    "gitUrl": "https://github.com/SampleService/meituan-service.git",
+    "dockerImageUrl": "septemberhx/meituan-service:v1.0",
+    "interfaceMap": {
+      "meituan-service-r02__hotel_function": {
+        "patternUrl": "/hotel",
+        "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.hotelFunction",
+        "slaLevel": 1,
+        "functionId": "hotel_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "meituan-service-r02__hotel_function",
+        "compositionList": null,
+        "serviceId": "meituan-service-r02",
+        "inDataSize": 100,
+        "outDataSize": 300
+      },
+      "meituan-service-r02__canteen_function": {
+        "patternUrl": "/canteen",
+        "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.canteenFunction",
+        "slaLevel": 2,
+        "functionId": "canteen_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "meituan-service-r02__canteen_function",
+        "compositionList": null,
+        "serviceId": "meituan-service-r02",
+        "inDataSize": 300,
+        "outDataSize": 500
+      },
+      "meituan-service-r02__carryout_function": {
+        "patternUrl": "/carryout",
+        "fullFuncName": "com.sampleservice.meituanservice.controller.MainController.carryoutFunction",
+        "slaLevel": 1,
+        "functionId": "carryout_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "meituan-service-r02__carryout_function",
+        "compositionList": null,
+        "serviceId": "meituan-service-r02",
+        "inDataSize": 300,
+        "outDataSize": 400
+      }
+    },
+    "resource": {
+      "cpu": 600,
+      "ram": 1000,
+      "bandwidth": 100
+    },
+    "maxUserCap": 250,
+    "id": "meituan-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "MeituanService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "eleme-service",
+    "gitUrl": "https://github.com/SampleService/eleme-service.git",
+    "dockerImageUrl": "septemberhx/eleme-service:v1.0",
+    "interfaceMap": {
+      "eleme-service-r01__carryout_function": {
+        "patternUrl": "/carryout",
+        "fullFuncName": "com.sampleservice.elemeservice.controller.MainController.carryoutFunction",
+        "slaLevel": 1,
+        "functionId": "carryout_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "eleme-service-r01__carryout_function",
+        "compositionList": null,
+        "serviceId": "eleme-service-r01",
+        "inDataSize": 10,
+        "outDataSize": 300
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 100,
+    "id": "eleme-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "ElemeService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "tencent-service",
+    "gitUrl": "https://github.com/SampleService/tencent-service.git",
+    "dockerImageUrl": "septemberhx/tencent-service:v1.0",
+    "interfaceMap": {
+      "tencent-service-r01__game_function": {
+        "patternUrl": "/game",
+        "fullFuncName": "com.sampleservice.tencentservice.controller.MainController.gameFunction",
+        "slaLevel": 2,
+        "functionId": "game_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "tencent-service-r01__game_function",
+        "compositionList": null,
+        "serviceId": "tencent-service-r01",
+        "inDataSize": 200,
+        "outDataSize": 400
+      },
+      "tencent-service-r01__chat_function": {
+        "patternUrl": "/chat",
+        "fullFuncName": "com.sampleservice.tencentservice.controller.MainController.chatFunction",
+        "slaLevel": 2,
+        "functionId": "chat_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "tencent-service-r01__chat_function",
+        "compositionList": null,
+        "serviceId": "tencent-service-r01",
+        "inDataSize": 1000,
+        "outDataSize": 1000
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 50,
+    "id": "tencent-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "TencentService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "tencent-service",
+    "gitUrl": "https://github.com/SampleService/tencent-service.git",
+    "dockerImageUrl": "septemberhx/tencent-service:v1.0",
+    "interfaceMap": {
+      "tencent-service-r02__game_function": {
+        "patternUrl": "/game",
+        "fullFuncName": "com.sampleservice.tencentservice.controller.MainController.gameFunction",
+        "slaLevel": 2,
+        "functionId": "game_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "tencent-service-r02__game_function",
+        "compositionList": null,
+        "serviceId": "tencent-service-r02",
+        "inDataSize": 200,
+        "outDataSize": 400
+      },
+      "tencent-service-r02__chat_function": {
+        "patternUrl": "/chat",
+        "fullFuncName": "com.sampleservice.tencentservice.controller.MainController.chatFunction",
+        "slaLevel": 2,
+        "functionId": "chat_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "tencent-service-r02__chat_function",
+        "compositionList": null,
+        "serviceId": "tencent-service-r02",
+        "inDataSize": 1000,
+        "outDataSize": 1000
+      }
+    },
+    "resource": {
+      "cpu": 800,
+      "ram": 800,
+      "bandwidth": 100
+    },
+    "maxUserCap": 100,
+    "id": "tencent-service-r02",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "TencentService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r02"
+  },
+  {
+    "generated": false,
+    "serviceName": "netease-service",
+    "gitUrl": "https://github.com/SampleService/netease-service.git",
+    "dockerImageUrl": "septemberhx/netease-service:v1.0",
+    "interfaceMap": {
+      "netease-service-r01__game_function": {
+        "patternUrl": "/game",
+        "fullFuncName": "com.sampleservice.neteaseservice.controller.MainController.gameFunction",
+        "slaLevel": 2,
+        "functionId": "game_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "netease-service-r01__game_function",
+        "compositionList": null,
+        "serviceId": "netease-service-r01",
+        "inDataSize": 200,
+        "outDataSize": 500
+      }
+    },
+    "resource": {
+      "cpu": 300,
+      "ram": 200,
+      "bandwidth": 100
+    },
+    "maxUserCap": 100,
+    "id": "netease-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "NeteaseService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "yy-service",
+    "gitUrl": "https://github.com/SampleService/yy-service.git",
+    "dockerImageUrl": "septemberhx/yy-service:v1.0",
+    "interfaceMap": {
+      "yy-service-r01__chat_function": {
+        "patternUrl": "/chat",
+        "fullFuncName": "com.sampleservice.yyservice.controller.MainController.chatFunction",
+        "slaLevel": 1,
+        "functionId": "chat_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "yy-service-r01__chat_function",
+        "compositionList": null,
+        "serviceId": "yy-service-r01",
+        "inDataSize": 2000,
+        "outDataSize": 1000
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 50,
+    "id": "yy-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "YYService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "bilibili-service",
+    "gitUrl": "https://github.com/SampleService/bilibili-service.git",
+    "dockerImageUrl": "septemberhx/bilibili-service:v1.0",
+    "interfaceMap": {
+      "bilibili-service-r01__stream_function": {
+        "patternUrl": "/stream",
+        "fullFuncName": "com.sampleservice.bilibiliservice.controller.MainController.streamFunction",
+        "slaLevel": 2,
+        "functionId": "stream_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "bilibili-service-r01__stream_function",
+        "compositionList": null,
+        "serviceId": "bilibili-service-r01",
+        "inDataSize": 2000,
+        "outDataSize": 20
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 400,
+      "bandwidth": 100
+    },
+    "maxUserCap": 50,
+    "id": "bilibili-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "BilibiliService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  },
+  {
+    "generated": false,
+    "serviceName": "douyu-service",
+    "gitUrl": "https://github.com/SampleService/douyu-service.git",
+    "dockerImageUrl": "septemberhx/douyu-service:v1.0",
+    "interfaceMap": {
+      "douyu-service-r01__stream_function": {
+        "patternUrl": "/stream",
+        "fullFuncName": "com.sampleservice.douyuservice.controller.MainController.streamFunction",
+        "slaLevel": 1,
+        "functionId": "stream_function",
+        "cpuResource": 0,
+        "ramResource": 0,
+        "maxUserNum": 100,
+        "interfaceId": "douyu-service-r01__stream_function",
+        "compositionList": null,
+        "serviceId": "douyu-service-r01",
+        "inDataSize": 3000,
+        "outDataSize": 30
+      }
+    },
+    "resource": {
+      "cpu": 500,
+      "ram": 500,
+      "bandwidth": 100
+    },
+    "maxUserCap": 100,
+    "id": "douyu-service-r01",
+    "artifactInfo": {
+      "groupId": "com.sampleservice",
+      "artifactId": "DouyuService",
+      "version": "1.0-SNAPSHOT"
+    },
+    "rId": "r01"
+  }
 ]
