@@ -75,7 +75,9 @@ def do_request(url, data_size_in_kb, user_demand):
     start_time = datetime.datetime.now().timestamp() * 1000  # mills
     r = requests.post(url, json=json_data)
     end_time = datetime.datetime.now().timestamp() * 1000
-    interval = r.json()['valueMap']['interval']
+    interval = 0
+    if 'interval' in r.json()['valueMap']:
+        interval = r.json()['valueMap']['interval']
     msg = r.json()['valueMap']['msg']
     response_time = end_time - start_time - interval
     return msg, response_time
