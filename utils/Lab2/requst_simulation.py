@@ -45,7 +45,7 @@ def do_request_chain(url, user_demand_list):
         function_id = user_demand['functionId']
         _, in_data_size = get_response_and_indata_size_with_service_and_function(service_name, function_id)
         msg, response_time = do_request(url, in_data_size, user_demand)
-        if msg == '/fail':
+        if msg == 'Fail':
             logger.info('Failed')
         else:
             for j in range(i, len(user_demand_list)):
@@ -75,10 +75,12 @@ def do_request(url, data_size_in_kb, user_demand):
     start_time = datetime.datetime.now().timestamp() * 1000  # mills
     r = requests.post(url, json=json_data)
     end_time = datetime.datetime.now().timestamp() * 1000
-    interval = 0
-    if 'interval' in r.json()['valueMap']:
+    if r.json()['status'] == 'Fail':
+        interval = 0
+        msg = 'Fail'
+    else:
         interval = r.json()['valueMap']['interval']
-    msg = r.json()['valueMap']['msg']
+        msg = r.json()['valueMap']['msg']
     response_time = end_time - start_time - interval
     return msg, response_time
 
