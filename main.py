@@ -29,13 +29,14 @@ def load_user_info_from_dict(dict_path):
 def fetch_target_user_list(user_info, start_index, end_index):
     result_info = {}
     for time_gap in user_info:
-        result_info[int(time_gap)] = []
         for user in user_info[time_gap]:
             user_id = user['id']  # type: str
             id_int = int(user_id.split('_')[-1])
             if id_int < start_index or id_int >= end_index:
                 break
-            result_info[int(time_gap)].append(user)
+            if user_id not in result_info:
+                result_info[user_id] = {}
+            result_info[user_id][int(time_gap)] = user
     return result_info
 
 
@@ -54,11 +55,12 @@ def load_data():
 def start_simulation():
     global target_user_info
     global gateway_ip_port
-    threading.Thread(target=simulation_single_user, kwargs={
-        'register_url': 'http://{0}/register'.format(gateway_ip_port),
-        'gateway_url': 'http://{0}/request'.format(gateway_ip_port),
-        'user_info_map': target_user_info
-    }).start()
+    for user_id in target_user_info.keys():
+        threading.Thread(target=simulation_single_user, kwargs={
+            'register_url': 'http://{0}/register'.format(gateway_ip_port),
+            'gateway_url': 'http://{0}/request'.format(gateway_ip_port),
+            'user_info_map': target_user_info[user_id]
+        }).start()
     return ''
 
 
@@ -66,4 +68,4 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=54321)
     # user_info = load_user_info_from_dict('./lab_data')
     # target_user_info = fetch_target_user_list(user_info, 0, 300)
-    # print(target_user_info[0])
+    # print(target_user_info['user_0'])
