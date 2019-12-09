@@ -749,4 +749,4 @@ if __name__ == '__main__':
     # print(create_specific_user_demand('user_1').to_json())
     # create_specific_user()
     info_dict = read_services_info('D:\Workspace\git\ExperimentTools\service.json')
-    generate_physical_user_set(3000, info_dict, 'D:\Workspace\physical_data')
+    generate_physical_user_set(1000, info_dict, 'D:\Workspace\physical_data')
