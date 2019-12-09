@@ -8,16 +8,16 @@
 import json
 
 edge_id_list = [
-    'edge-master',
-    'bandwagon-los-01',
-    'bandwagon-los-02',
-    'bandwagon-los-03',
-    'bandwagon-los-04',
-    'vultr-los-01',
-    'vultr-los-02',
-    'vultr-los-03',
-    'vultr-los-04',
-    'vultr-los-05'
+    'aws-cluster-master',
+    'aws-cluster-01',
+    'aws-cluster-02',
+    'aws-cluster-03',
+    'aws-cluster-04',
+    'aws-cluster-05',
+    'aws-cluster-06',
+    'aws-cluster-07',
+    'aws-cluster-08',
+    'aws-cluster-09',
 ]
 
 cloud_id_list = [
@@ -32,8 +32,8 @@ if __name__ == '__main__':
                 'successor': edge_id_list[i],
                 'predecessor': edge_id_list[j],
                 'connection': {
-                    'delay': 1,
-                    'bandwidth': 100
+                    'delay': 5,
+                    'bandwidth': 1000
                 }
             }
             result.append(c_info)
@@ -43,8 +43,8 @@ if __name__ == '__main__':
                 'successor': edge_id_list[i],
                 'predecessor': edge_id_list[j],
                 'connection': {
-                    'delay': 1,
-                    'bandwidth': 20
+                    'delay': 55,
+                    'bandwidth': 200
                 }
             }
             result.append(c_info)

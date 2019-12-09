@@ -48,6 +48,7 @@ def load_data():
     gateway_ip_port = data_json['gateway']
     user_info = load_user_info_from_dict('./lab_data')
     target_user_info = fetch_target_user_list(user_info, data_json['start'], data_json['end'])
+    load_service_info('./service.json')
     return ''
 
 

@@ -18,6 +18,7 @@ logger = get_logger('request_simulation')
 
 
 def load_service_info(service_json_path):
+    global service_info
     with open(service_json_path) as f:
         service_data = json.load(f)
         for service in service_data:
@@ -27,6 +28,7 @@ def load_service_info(service_json_path):
 
 
 def get_response_and_indata_size_with_service_and_function(service_name, function_id):
+    global service_info
     if service_name in service_info:
         interface_map = service_info[service_name][0]['interfaceMap']
         for interface in interface_map.values():

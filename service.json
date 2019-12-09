@@ -49,8 +49,8 @@
       }
     },
     "resource": {
-      "cpu": 200,
-      "ram": 200,
+      "cpu": 500,
+      "ram": 500,
       "bandwidth": 100
     },
     "maxUserCap": 100,
@@ -112,8 +112,8 @@
       }
     },
     "resource": {
-      "cpu": 300,
-      "ram": 300,
+      "cpu": 800,
+      "ram": 800,
       "bandwidth": 100
     },
     "maxUserCap": 150,
@@ -175,8 +175,8 @@
       }
     },
     "resource": {
-      "cpu": 500,
-      "ram": 500,
+      "cpu": 1000,
+      "ram": 1000,
       "bandwidth": 100
     },
     "maxUserCap": 250,
@@ -210,8 +210,8 @@
       }
     },
     "resource": {
-      "cpu": 100,
-      "ram": 100,
+      "cpu": 400,
+      "ram": 400,
       "bandwidth": 100
     },
     "maxUserCap": 80,
@@ -245,8 +245,8 @@
       }
     },
     "resource": {
-      "cpu": 150,
-      "ram": 150,
+      "cpu": 650,
+      "ram": 650,
       "bandwidth": 100
     },
     "maxUserCap": 130,
@@ -280,8 +280,8 @@
       }
     },
     "resource": {
-      "cpu": 120,
-      "ram": 200,
+      "cpu": 420,
+      "ram": 400,
       "bandwidth": 100
     },
     "maxUserCap": 50,
@@ -315,8 +315,8 @@
       }
     },
     "resource": {
-      "cpu": 120,
-      "ram": 200,
+      "cpu": 420,
+      "ram": 400,
       "bandwidth": 100
     },
     "maxUserCap": 80,
@@ -350,8 +350,8 @@
       }
     },
     "resource": {
-      "cpu": 200,
-      "ram": 200,
+      "cpu": 400,
+      "ram": 400,
       "bandwidth": 100
     },
     "maxUserCap": 80,
@@ -385,8 +385,8 @@
       }
     },
     "resource": {
-      "cpu": 200,
-      "ram": 400,
+      "cpu": 600,
+      "ram": 500,
       "bandwidth": 100
     },
     "maxUserCap": 100,
@@ -434,7 +434,7 @@
       }
     },
     "resource": {
-      "cpu": 300,
+      "cpu": 500,
       "ram": 500,
       "bandwidth": 100
     },
@@ -574,8 +574,8 @@
       }
     },
     "resource": {
-      "cpu": 220,
-      "ram": 330,
+      "cpu": 420,
+      "ram": 430,
       "bandwidth": 100
     },
     "maxUserCap": 110,
@@ -609,8 +609,8 @@
       }
     },
     "resource": {
-      "cpu": 420,
-      "ram": 430,
+      "cpu": 620,
+      "ram": 630,
       "bandwidth": 100
     },
     "maxUserCap": 160,
@@ -882,7 +882,7 @@
       }
     },
     "resource": {
-      "cpu": 200,
+      "cpu": 350,
       "ram": 400,
       "bandwidth": 100
     },
@@ -1113,8 +1113,8 @@
       }
     },
     "resource": {
-      "cpu": 300,
-      "ram": 200,
+      "cpu": 500,
+      "ram": 300,
       "bandwidth": 100
     },
     "maxUserCap": 100,
