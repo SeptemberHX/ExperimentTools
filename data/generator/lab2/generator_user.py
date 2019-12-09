@@ -155,10 +155,8 @@ def generate_canteen_demand_list(user_id, service_info):
     r1 = generator_random.random()
     if r1 < 0.4:
         service1 = 'ali-service'
-    elif r1 < 0.8:
-        service1 = 'meituan-service'
     else:
-        service1 = None
+        service1 = 'meituan-service'
     d1 = MDemand(
         id='{0}_{1}_canteen'.format(user_id, f1),
         userId=user_id,
@@ -172,10 +170,8 @@ def generate_canteen_demand_list(user_id, service_info):
     r1 = generator_random.random()
     if r1 < 0.4:
         service1 = 'didi-service'
-    elif r1 < 0.8:
-        service1 = 'taxi-service'
     else:
-        service1 = None
+        service1 = 'taxi-service'
     d1 = MDemand(
         id='{0}_{1}_canteen'.format(user_id, f1),
         userId=user_id,
@@ -189,12 +185,10 @@ def generate_canteen_demand_list(user_id, service_info):
     r2 = generator_random.random()
     if r2 < 0.3:
         service2 = 'ali-service'
-    elif r2 < 0.5:
-        service2 = 'wechat-service'
     elif r2 < 0.6:
-        service2 = 'paypal-service'
+        service2 = 'wechat-service'
     else:
-        service2 = None
+        service2 = 'paypal-service'
     d2 = MDemand(
         id='{0}_{1}_canteen'.format(user_id, f2),
         userId=user_id,
@@ -215,10 +209,8 @@ def generate_market_demand_list(user_id, service_info):
         service1 = 'jindong-service'
     elif r1 < 0.7:
         service1 = 'ali-service'
-    elif r1 < 0.9:
-        service1 = 'amazon-service'
     else:
-        service1 = None
+        service1 = 'amazon-service'
     d1 = MDemand(
         id='{0}_{1}_market'.format(user_id, f1),
         userId=user_id,
@@ -232,12 +224,10 @@ def generate_market_demand_list(user_id, service_info):
     r2 = generator_random.random()
     if r2 < 0.3:
         service2 = 'ali-service'
-    elif r2 < 0.5:
+    elif r2 < 0.7:
         service2 = 'wechat-service'
-    elif r2 < 0.6:
-        service2 = 'paypal-service'
     else:
-        service2 = None
+        service2 = 'paypal-service'
     d2 = MDemand(
         id='{0}_{1}_market'.format(user_id, f2),
         userId=user_id,
@@ -251,12 +241,10 @@ def generate_market_demand_list(user_id, service_info):
     r2 = generator_random.random()
     if r2 < 0.3:
         service2 = 'shunfeng-service'
-    elif r2 < 0.5:
-        service2 = 'cainiao-service'
     elif r2 < 0.6:
-        service2 = 'jindong-service'
+        service2 = 'cainiao-service'
     else:
-        service2 = None
+        service2 = 'jindong-service'
     d2 = MDemand(
         id='{0}_{1}_market'.format(user_id, f2),
         userId=user_id,
@@ -274,10 +262,8 @@ def generate_market_demand_list(user_id, service_info):
             service2 = 'jindong-service'
         elif r2 < 0.7:
             service2 = 'ali-service'
-        elif r2 < 0.9:
-            service2 = 'amazon-service'
         else:
-            service2 = None
+            service2 = 'amazon-service'
         d2 = MDemand(
             id='{0}_{1}_resell_market'.format(user_id, f2),
             userId=user_id,
@@ -296,10 +282,8 @@ def generate_bike_demand_list(user_id, service_info):
     r1 = generator_random.random()
     if r1 < 0.4:
         service1 = 'mobi-service'
-    elif r1 < 0.8:
-        service1 = 'ofo-service'
     else:
-        service1 = None
+        service1 = 'ofo-service'
     d1 = MDemand(
         id='{0}_{1}_share_bike'.format(user_id, f1),
         userId=user_id,
@@ -313,10 +297,8 @@ def generate_bike_demand_list(user_id, service_info):
     r1 = generator_random.random()
     if r1 < 0.4:
         service1 = 'gaode-service'
-    elif r1 < 0.8:
-        service1 = 'baidu-service'
     else:
-        service1 = None
+        service1 = 'baidu-service'
     d1 = MDemand(
         id='{0}_{1}_share_bike'.format(user_id, f1),
         userId=user_id,
@@ -330,12 +312,10 @@ def generate_bike_demand_list(user_id, service_info):
     r2 = generator_random.random()
     if r2 < 0.3:
         service2 = 'ali-service'
-    elif r2 < 0.5:
+    elif r2 < 0.7:
         service2 = 'wechat-service'
-    elif r2 < 0.6:
-        service2 = 'paypal-service'
     else:
-        service2 = None
+        service2 = 'paypal-service'
     d2 = MDemand(
         id='{0}_{1}_share_bike'.format(user_id, f2),
         userId=user_id,
@@ -354,10 +334,8 @@ def generate_hotel_demand_list(user_id, service_info):
     r1 = generator_random.random()
     if r1 < 0.4:
         service1 = 'xiecheng-service'
-    elif r1 < 0.8:
-        service1 = 'meituan-service'
     else:
-        service1 = None
+        service1 = 'meituan-service'
     d1 = MDemand(
         id='{0}_{1}_hotel'.format(user_id, f1),
         userId=user_id,
@@ -373,10 +351,8 @@ def generate_hotel_demand_list(user_id, service_info):
         r1 = generator_random.random()
         if r1 < 0.4:
             service1 = 'meituan-service'
-        elif r1 < 0.8:
-            service1 = 'eleme-service'
         else:
-            service1 = None
+            service1 = 'eleme-service'
         d1 = MDemand(
             id='{0}_{1}_hotel'.format(user_id, f1),
             userId=user_id,
@@ -390,12 +366,10 @@ def generate_hotel_demand_list(user_id, service_info):
     r2 = generator_random.random()
     if r2 < 0.3:
         service2 = 'ali-service'
-    elif r2 < 0.5:
+    elif r2 < 0.8:
         service2 = 'wechat-service'
-    elif r2 < 0.6:
-        service2 = 'paypal-service'
     else:
-        service2 = None
+        service2 = 'paypal-service'
     d2 = MDemand(
         id='{0}_{1}_hotel'.format(user_id, f2),
         userId=user_id,
@@ -415,10 +389,8 @@ def generate_game_demand_list(user_id, service_info):
     r1 = generator_random.random()
     if r1 < 0.4:
         service1 = 'tencent-service'
-    elif r1 < 0.8:
-        service1 = 'netease-service'
     else:
-        service1 = None
+        service1 = 'netease-service'
     d1 = MDemand(
         id='{0}_{1}_game'.format(user_id, f1),
         userId=user_id,
@@ -434,10 +406,8 @@ def generate_game_demand_list(user_id, service_info):
         r2 = generator_random.random()
         if r2 < 0.4:
             service2 = 'tencent-service'
-        elif r2 < 0.8:
-            service2 = 'yy-service'
         else:
-            service2 = None
+            service2 = 'yy-service'
         d2 = MDemand(
             id='{0}_{1}_game'.format(user_id, f2),
             userId=user_id,
@@ -453,10 +423,8 @@ def generate_game_demand_list(user_id, service_info):
         r2 = generator_random.random()
         if r2 < 0.4:
             service2 = 'bilibili-service'
-        elif r2 < 0.8:
-            service2 = 'douyu-service'
         else:
-            service2 = None
+            service2 = 'douyu-service'
         d2 = MDemand(
             id='{0}_{1}_game'.format(user_id, f2),
             userId=user_id,
@@ -472,12 +440,10 @@ def generate_game_demand_list(user_id, service_info):
         r2 = generator_random.random()
         if r2 < 0.3:
             service2 = 'ali-service'
-        elif r2 < 0.5:
+        elif r2 < 0.7:
             service2 = 'wechat-service'
-        elif r2 < 0.6:
-            service2 = 'paypal-service'
         else:
-            service2 = None
+            service2 = 'paypal-service'
         d2 = MDemand(
             id='{0}_{1}_game'.format(user_id, f2),
             userId=user_id,
