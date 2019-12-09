@@ -32,6 +32,8 @@ def get_response_and_indata_size_with_service_and_function(service_name, functio
         for interface in interface_map.values():
             if interface['functionId'] == function_id:
                 return interface['patternUrl'], interface['inDataSize']
+    else:
+        raise Exception(service_name + ' not in the service database')
     return None
 
 
