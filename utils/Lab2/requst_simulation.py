@@ -41,7 +41,6 @@ def get_response_and_indata_size_with_service_and_function(service_name, functio
 
 def do_request_chain(url, user_demand_list):
     i = 0
-    total_response_time = 0
     logger.info('======')
     while i < len(user_demand_list):
         user_demand = user_demand_list[i]
@@ -50,7 +49,7 @@ def do_request_chain(url, user_demand_list):
         _, in_data_size = get_response_and_indata_size_with_service_and_function(service_name, function_id)
         msg, response_time = do_request(url, in_data_size, user_demand)
         if msg == 'Fail':
-            logger.info('Failed')
+            logger.info('Failed ' + user_demand['id'])
         else:
             for j in range(i, len(user_demand_list)):
                 next_service_name = user_demand_list[j]['serviceId']
@@ -59,10 +58,9 @@ def do_request_chain(url, user_demand_list):
                 if next_res_msg == msg:
                     i = j
                     break
-            total_response_time += response_time
+            logger.info(str(response_time) + ' ' + user_demand['id'])
         i += 1
         time.sleep(random.randint(1, 5))
-    logger.info(total_response_time)
     logger.info('++++++')
 
 
