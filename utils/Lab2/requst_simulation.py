@@ -77,13 +77,17 @@ def do_request(url, data_size_in_kb, user_demand):
     start_time = datetime.datetime.now().timestamp() * 1000  # mills
     r = requests.post(url, json=json_data)
     end_time = datetime.datetime.now().timestamp() * 1000
+    msg = 'Fail'
+    interval = 0
     if r.json()['status'] == 'Fail':
         interval = 0
         msg = 'Fail'
     else:
-        print(r.json())
-        interval = r.json()['valueMap']['interval']
-        msg = r.json()['valueMap']['msg']
+        if 'valueMap' not in r.json():
+            print(r.json())
+        else:
+            interval = r.json()['valueMap']['interval']
+            msg = r.json()['valueMap']['msg']
     response_time = end_time - start_time - interval
     return msg, response_time
 

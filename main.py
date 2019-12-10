@@ -9,12 +9,14 @@ import threading
 import os
 import json
 
+from typing import List
 from utils.Lab2.requst_simulation import simulation_single_user, load_service_info
 from flask import Flask, request
 
 app = Flask(__name__)
 target_user_info = {}
 gateway_ip_port = None
+thread_list = []  # type: List[threading.Thread]
 
 
 def load_user_info_from_dict(dict_path):
@@ -56,12 +58,14 @@ def load_data():
 def start_simulation():
     global target_user_info
     global gateway_ip_port
+    global thread_list
     for user_id in target_user_info.keys():
-        threading.Thread(target=simulation_single_user, kwargs={
+        t = threading.Thread(target=simulation_single_user, kwargs={
             'register_url': 'http://{0}/register'.format(gateway_ip_port),
             'gateway_url': 'http://{0}/request'.format(gateway_ip_port),
             'user_info_map': target_user_info[user_id]
-        }).start()
+        })
+        t.start()
     return ''
 
 
