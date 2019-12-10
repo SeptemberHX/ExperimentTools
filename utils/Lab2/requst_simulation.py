@@ -119,7 +119,7 @@ def do_request_user(url, user_info):
 def simulation_single_user(register_url, gateway_url, user_info_map: dict):
     """
     The user_info_map is passed time to user bean.
-    {0: info1, 100: info2, ...} means info1 is the first info. After 100 seconds, changing to info2, etc.
+    {90000: info1, 100: info2, ...} means info1 is the first info. After 100 seconds, changing to info2, etc.
     """
     time_list = sorted(user_info_map.keys())
     assert time_list[0] == 0
