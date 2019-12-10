@@ -86,8 +86,9 @@ def do_request(url, data_size_in_kb, user_demand):
         if 'valueMap' not in r.json():
             print(r.json())
         else:
-            interval = r.json()['valueMap']['interval']
-            msg = r.json()['valueMap']['msg']
+            if 'msg' in r.json()['valueMap']:
+                interval = r.json()['valueMap']['interval']
+                msg = r.json()['valueMap']['msg']
     response_time = end_time - start_time - interval
     return msg, response_time
 
