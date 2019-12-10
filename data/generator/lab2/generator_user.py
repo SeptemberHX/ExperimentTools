@@ -744,7 +744,7 @@ def generate_physical_user_set(user_size, service_info, result_dir):
 
 if __name__ == '__main__':
     # info_dict = read_services_info(
-    #     '/Workspace/gitlab/mdata/Lab2/ExperimentData/{90000}/{1}/service.json'.format('v1', 1000))
+    #     '/Workspace/gitlab/mdata/Lab2/ExperimentData/{0}/{1}/service.json'.format('v1', 1000))
     # print(create_random_user_demand('user_0', info_dict).to_json())
     # print(create_specific_user_demand('user_1').to_json())
     # create_specific_user()

@@ -4,7 +4,7 @@
 @File: logger.py
 @Author: septemberhx
 @Date: 2019-01-06
-@Version: 90000.01
+@Version: 0.01
 """
 
 import logging
