@@ -60,7 +60,7 @@ def do_request_chain(url, user_demand_list):
                     break
             logger.info(str(response_time) + ' ' + user_demand['id'])
         i += 1
-        time.sleep(random.randint(1, 5))
+        time.sleep(random.randint(1, 3))
     logger.info('++++++')
 
 
@@ -119,7 +119,7 @@ def simulation_single_user(register_url, gateway_url, user_info_map: dict):
     start_timestamp = datetime.datetime.now().timestamp()  # seconds
     while i < len(time_list):
         do_request_user(gateway_url, user_info_map[time_list[i]])
-        time.sleep(random.randint(0, 10))
+        time.sleep(random.randint(0, 3))
         curr_timestamp = datetime.datetime.now().timestamp()
         if i + 1 < len(time_list) and curr_timestamp - start_timestamp > time_list[i + 1]:
             i += 1

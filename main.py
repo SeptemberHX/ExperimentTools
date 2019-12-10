@@ -33,7 +33,7 @@ def fetch_target_user_list(user_info, start_index, end_index):
             user_id = user['id']  # type: str
             id_int = int(user_id.split('_')[-1])
             if id_int < start_index or id_int >= end_index:
-                break
+                continue
             if user_id not in result_info:
                 result_info[user_id] = {}
             result_info[user_id][int(time_gap)] = user
