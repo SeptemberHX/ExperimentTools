@@ -40,7 +40,7 @@ if __name__ == '__main__':
     for i in range(0, len(cloud_id_list)):
         for j in range(0, len(edge_id_list)):
             c_info = {
-                'successor': edge_id_list[i],
+                'successor': cloud_id_list[i],
                 'predecessor': edge_id_list[j],
                 'connection': {
                     'delay': 55,

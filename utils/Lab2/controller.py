@@ -7,6 +7,7 @@
 
 import sys
 import requests
+import datetime
 
 from utils.Lab2.system_info import start_gather_system_info
 
@@ -103,5 +104,6 @@ def reset_gateway():
 if __name__ == '__main__':
     reset_gateway()
     init_simulator()
+    print(datetime.datetime.now().timestamp())
     start_simulator()
     start_gather_system_info()
