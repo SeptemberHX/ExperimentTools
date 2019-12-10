@@ -81,6 +81,7 @@ def do_request(url, data_size_in_kb, user_demand):
         interval = 0
         msg = 'Fail'
     else:
+        print(r.json())
         interval = r.json()['valueMap']['interval']
         msg = r.json()['valueMap']['msg']
     response_time = end_time - start_time - interval
