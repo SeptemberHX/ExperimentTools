@@ -115,8 +115,8 @@ def evolve():
 
 
 if __name__ == '__main__':
-    # reset_gateway()
-    # init_simulator()
-    # print(datetime.datetime.now().timestamp())
-    # start_simulator()
-    evolve()
+    reset_gateway()
+    init_simulator()
+    print(datetime.datetime.now().timestamp())
+    start_simulator()
+    # evolve()

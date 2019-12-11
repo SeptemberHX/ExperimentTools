@@ -15,6 +15,7 @@ from utils.common.logger import get_logger
 
 service_info = {}
 logger = get_logger('request_simulation')
+last_timestamp = datetime.datetime.now().timestamp()
 
 
 def load_service_info(service_json_path):
@@ -65,6 +66,7 @@ def do_request_chain(url, user_demand_list):
 
 
 def do_request(url, data_size_in_kb, user_demand):
+    global last_timestamp
     json_data = {
         "userDemand": user_demand,
         "data": {
@@ -91,7 +93,10 @@ def do_request(url, data_size_in_kb, user_demand):
             if 'interval' in r.json()['valueMap']:
                 interval = r.json()['valueMap']['interval']
             else:
-                print(r.json())
+                curr_timestamp = datetime.datetime.now().timestamp()
+                if curr_timestamp - last_timestamp > 5:
+                    print(r.json())
+                    last_timestamp = curr_timestamp
     response_time = end_time - start_time - interval
     return msg, response_time
 
