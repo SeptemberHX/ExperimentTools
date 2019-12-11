@@ -5,12 +5,10 @@
 # @File : controller.py
 # @Description:
 
-import sys
 import requests
 import datetime
 import time
 
-from utils.Lab2.system_info import start_gather_system_info
 
 ip_list = {
     '144.34.160.60': {
