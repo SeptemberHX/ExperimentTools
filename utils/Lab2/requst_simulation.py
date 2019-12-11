@@ -48,9 +48,10 @@ def do_request_chain(url, user_demand_list):
         service_name = user_demand['serviceId']
         function_id = user_demand['functionId']
         _, in_data_size = get_response_and_indata_size_with_service_and_function(service_name, function_id)
+        request_time = datetime.datetime.now().timestamp()
         msg, response_time = do_request(url, in_data_size, user_demand)
         if msg == 'Fail':
-            logger.info('Failed ' + user_demand['id'])
+            logger.info('Failed ' + user_demand['id'] + ' ' + request_time)
         else:
             for j in range(i, len(user_demand_list)):
                 next_service_name = user_demand_list[j]['serviceId']
@@ -59,7 +60,7 @@ def do_request_chain(url, user_demand_list):
                 if next_res_msg == msg:
                     i = j
                     break
-            logger.info(str(response_time) + ' ' + user_demand['id'])
+            logger.info(str(response_time) + ' ' + user_demand['id'] + ' ' + request_time)
         i += 1
         time.sleep(random.randint(1, 3))
     logger.info('++++++')
