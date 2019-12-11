@@ -10,6 +10,6 @@ cd result
 for ip in "${ip_array[@]}"
 do
   echo $ip
-  sshpass -p HIT-ices-511 scp -P 22333 root@$ip:/root/ExperimentTools/log.log ./"${ip}"_log.log
+  sshpass -p HIT-ices-511 scp -P 22333 -o ProxyCommand="corkscrew 172.23.96.1 1080 %h %p" root@$ip:/root/ExperimentTools/log.log ./"${ip}"_log.log
 done
 sshpass -p tianjianshan scp -P 22333 hexiang@192.168.1.102:/home/hexiang/workspace/pycharm/ExperimentTools/utils/Lab2/log.log ./system.log
