@@ -8,6 +8,7 @@
 import sys
 import requests
 import datetime
+import time
 
 from utils.Lab2.system_info import start_gather_system_info
 
@@ -101,9 +102,21 @@ def reset_gateway():
             print('Failed to reset gateway on {0}'.format(ip_list[ip]['gateway']))
 
 
+
+def evolve():
+    count = 1
+    while True:
+        try:
+            print(count)
+            response = requests.get('http://3.136.80.127:9001/mserver/evolve?type=1')
+            time.sleep(100)
+        except Exception as e:
+            print(e)
+
+
 if __name__ == '__main__':
-    reset_gateway()
-    init_simulator()
-    print(datetime.datetime.now().timestamp())
-    start_simulator()
-    start_gather_system_info()
+    # reset_gateway()
+    # init_simulator()
+    # print(datetime.datetime.now().timestamp())
+    # start_simulator()
+    evolve()
