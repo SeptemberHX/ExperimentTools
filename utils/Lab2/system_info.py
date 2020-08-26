@@ -17,7 +17,7 @@ logger = get_logger('system_info')
 
 def start_gather_system_info():
     while True:
-        r = requests.post('http://3.136.80.127:9001/mserver/systemInfo', json={})
+        r = requests.post('http://3.131.111.217:9001/mserver/systemInfo', json={})
         logger.info(r.json())
         time.sleep(10)
 

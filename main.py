@@ -72,5 +72,5 @@ def start_simulation():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=54321)
     # user_info = load_user_info_from_dict('./lab_data')
-    # target_user_info = fetch_target_user_list(user_info, 0, 300)
+    # target_user_info = fetch_target_user_list(user_info, 0, 500)
     # print(target_user_info['user_0'])
