@@ -8,7 +8,7 @@
 import json
 
 edge_id_list = [
-    'aws-cluster-master',
+    'edge-0',
     'aws-cluster-01',
     'aws-cluster-02',
     'aws-cluster-03',
@@ -21,7 +21,7 @@ edge_id_list = [
 ]
 
 cloud_id_list = [
-    'aws-us-master'
+    'cloud'
 ]
 
 if __name__ == '__main__':
