@@ -6,4 +6,6 @@
 # @Description:
 from utils.Lab2.system_info import start_gather_system_info
 
-start_gather_system_info()
+
+if __name__ == '__main__':
+    start_gather_system_info()

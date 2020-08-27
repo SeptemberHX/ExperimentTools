@@ -9,15 +9,15 @@ import json
 
 edge_id_list = [
     'edge-0',
-    'aws-cluster-01',
-    'aws-cluster-02',
-    'aws-cluster-03',
-    'aws-cluster-04',
-    'aws-cluster-05',
-    'aws-cluster-06',
-    'aws-cluster-07',
-    'aws-cluster-08',
-    'aws-cluster-09',
+    'edge-1',
+    'edge-2',
+    'edge-3',
+    'edge-4',
+    'edge-5',
+    'edge-6',
+    'edge-7',
+    'edge-8',
+    'edge-9',
 ]
 
 cloud_id_list = [

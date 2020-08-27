@@ -14,8 +14,8 @@ import random
 import string
 
 # 数据文件为 ip_log.log 以及 system*.log
-data_dir = 'D:\\result\\result_new'
-result_dir = 'D:\\result\\csv'
+data_dir = '/Users/septemberhx/Desktop/FGCS2020-dlc/2000'
+result_dir = '/Users/septemberhx/Desktop/FGCS2020-dlc/2000-csv'
 
 
 def parse_system_log(log_path):
@@ -134,7 +134,8 @@ def request_log_to_failed_csv(log_result_list, dir_path):
         f_csv = csv.writer(f)
         f_csv.writerow(['time', 'Failed Count'])
         row = []
-        for time in failed_dict:
+        time_keys = sorted(failed_dict.keys())
+        for time in time_keys:
             row.append([time, failed_dict[time]])
         f_csv.writerows(row)
 
@@ -162,7 +163,8 @@ def request_log_avg_response_time_csv(log_result_list, dir_path):
         f_csv = csv.writer(f)
         f_csv.writerow(['time', 'Average Response Time'])
         row = []
-        for time in response_time_dict:
+        time_keys = sorted(response_time_dict.keys())
+        for time in time_keys:
             all_time = sum(response_time_dict[time])
             avg_time = all_time / len(response_time_dict[time])
             row.append([time, avg_time])
@@ -184,6 +186,7 @@ def main():
     os.mkdir(random_dir_path)
     print('======>  ' + random_dir_path + '  <======')
     request_log_avg_response_time_csv(request_log_list, random_dir_path)
+    request_log_to_failed_csv(request_log_list, random_dir_path)
 
 
 if __name__ == '__main__':
