@@ -48,7 +48,7 @@ def load_data():
     global gateway_ip_port
     data_json = json.loads(request.get_data())
     gateway_ip_port = data_json['gateway']
-    user_info = load_user_info_from_dict('./physical_data_4000')
+    user_info = load_user_info_from_dict('./physical_data_2500')
     target_user_info = fetch_target_user_list(user_info, data_json['start'], data_json['end'])
     load_service_info('./service.json')
     return ''

@@ -749,4 +749,4 @@ if __name__ == '__main__':
     # print(create_specific_user_demand('user_1').to_json())
     # create_specific_user()
     info_dict = read_services_info('../../../service.json')
-    generate_physical_user_set(4000, info_dict, '../../../physical_data_4000')
+    generate_physical_user_set(2500, info_dict, '../../../physical_data_2500')
